@@ -133,7 +133,7 @@ html body{
 }
 .all-right  .addr_dd .tabs span{
     display:inline-block;
-    width:54px;
+    min-width:54px;
     height:29px;
     border:1px solid #dbdbdb;
     border-bottom: none;
@@ -145,16 +145,22 @@ html body{
     border-color:#c80000;
     height: 30px;
 }
+.all-right  .addr_dd .close{
+    background: url(../img/del.jpg) no-repeat -35px 10px;
+    float: right;
+    width:30px;
+    height: 30px;
+}
 .all-right .addr_content{
     margin-top:20px;
 }
 .all-right .addr_content ul{
+    padding-left:10px;
     display: none;
 }
 .all-right .addr_content li{
-    padding-left:10px;
-    margin-bottom:20px;
-    width:90px;
+    height: 40px;
+    width:100px;
     cursor: pointer;
 }
 .all-right .addr_content li:hover{

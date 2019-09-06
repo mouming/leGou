@@ -44,37 +44,25 @@
                 <div class="all-right">
                     配送至
                     <div class="address">
-                        <span>北京北京市朝阳区</span> 
+                        <span id="show_address">北京市朝阳区</span> 
                         <div class="select_address">
                             <div class="addr_dt">选择新地址</div>
                             <div class="addr_dd">
                                 <div class="tabs ">
-                                    <span id="province_tab" class="click_border">北京</span>
-                                    <span id="city_tab">北京市</span>
+                                    <span id="province_tab" class="click_border">北京市</span>
+                                    <span id="city_tab" style="display: none">市</span>
                                     <span id="district_tab">朝阳区</span>
-                                    <strong class="close"></strong>
+                                    <strong class="close" id="close_address"></strong>
                                 </div>
                                 <div class="addr_content">
-                                    <ul id="province " class="clearfix" style="display: block">
-                                        <li>北京</li>
-                                        <li>上海</li>
-                                        <li>上海</li>
-                                        <li>上海</li>
-                                        <li>上海</li>
+                                    <ul id="province" class="clearfix" style="display: block">
+                                        <!-- <li>北京</li> -->
                                     </ul>
                                      <ul id="city" class="clearfix">
-                                        <li>上海市</li>
-                                        <li>北京</li>
-                                        <li>上海</li>
-                                        <li>上海</li>
-                                        <li>上海</li>
+                                        <!-- <li>上海市</li> -->
                                     </ul>
                                     <ul id="district" class="clearfix">
-                                        <li>北京区</li>
-                                        <li>上海</li>
-                                        <li>上海</li>
-                                        <li>上海</li>
-                                        <li>上海</li>
+                                        <!-- <li>北京区</li> -->
                                     </ul> 
                                 </div>
                             </div>
@@ -159,6 +147,7 @@
             this.name="";
             this.cookieCarts=[];
             this.jsonData=[];
+            this.addressData={};
         }
         // 页面初始化
         ShowCart.prototype.init=function (){
@@ -196,7 +185,10 @@
                 _this.judgePage();
             });
             $.getJSON("../json/pca.json",function(data){
-                console.log(data)
+                _this.addressData=data;
+                // console.log(this.addressData)
+                 //地址三级联动
+                _this.addressCheck(".address",".select_address",".tabs",".addr_content");
             })
         }
         // 显示不同状态对应的页面布局
@@ -220,8 +212,7 @@
                     this.statisticsNum();
                     // 统计购物车中的商品数量
                     this.addCartNum();
-                    //地址三级联动
-                    this.addressCheck(".address",".select_address",".tabs",".addr_content");
+                   
                 }else{
                     $(".cart-goods").css("display","none");
                     $(".no-goods").css("display","block").find("#loginCart").css("display","block").end().find("#unloginCart").css("display","none");
@@ -421,6 +412,14 @@
             $("#goods-num").html(sum);
         }
         ShowCart.prototype.addressCheck=function (targetEle,showEle,addrTab,addrContent){
+            var _this=this;
+            var str1='';
+            for (const key in this.addressData) {
+                str1+=`
+                    <li title="${key}">${key}</li>
+                `;
+            }
+            $("#province").append(str1);
             $(targetEle).click(function (){
                 $(showEle).css("display","block");
                 $(addrTab).delegate("span","click",function(){
@@ -428,6 +427,58 @@
                     $(this).parent().find("span").removeClass("click_border");
                     $(this).addClass("click_border");
                     $(addrContent).find("ul").css("display","none").eq($(this).index()).css("display","block");
+                });
+                //关闭选择框
+                $("#close_address").click(function (){
+                    event.stopPropagation();
+                    $(showEle).css("display","none");
+                })
+                //点击省份生成对应的区
+                $("#province li").click(function(){
+                    event.stopPropagation();
+                    var provinceName=$(this).attr("title");
+                    var str2="";
+                    for (const key in _this.addressData[provinceName]) {
+                        str2+=`
+                            <li title="${key}">${key}</li>
+                        `;
+                    }
+                    $(addrTab).find("span").removeClass("click_border");
+                    $("#city_tab").addClass("click_border");
+                    $("#province_tab").html(provinceName);
+                    $("#city_tab").html("市").css("display","inline-block");
+                    $("#district_tab").html("区/县");
+                    $(addrContent).find("ul").css("display","none");
+                    $("#city").css("display","block").html(str2);
+                    //点击市生成对应的区
+                    $("#city li").click(function (){
+                        event.stopPropagation();
+                        var cityName="";
+                        var str3="";
+                        _this.addressData[provinceName][$(this).attr("title")].forEach(function(item){
+                            str3+=`
+                                <li title="${item}">${item}</li>
+                            `;
+                        })
+                        $(addrTab).find("span").removeClass("click_border");
+                        $("#district_tab").addClass("click_border").html("区/县");
+                        if($(this).attr("title")==="市辖区"||$(this).attr("title")==="县"){
+                            $("#city_tab").css("display","none");
+                        }else{
+                            cityName=$(this).attr("title");
+                            $("#city_tab").html(cityName);
+                        }
+                        $(addrContent).find("ul").css("display","none");
+                        $("#district").css("display","block").html(str3);
+                        //点击区/县，关闭选择框
+                        $("#district li").click(function (){
+                            event.stopPropagation();
+                            var districtName=$(this).attr("title")
+                            $("#district_tab").html(districtName);
+                            $(showEle).css("display","none");
+                            $("#show_address").html(provinceName+cityName+districtName);
+                        })
+                    })
                 })
             })
         }
