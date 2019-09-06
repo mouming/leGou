@@ -1,0 +1,41 @@
+/*******样式初始化*******/
+body,p,h1,h2,h3,h4,h5,h6,img,input,li,ul,dl,dt,dd,ol,table,form,span,tr,td,th{
+    margin: 0;
+    padding: 0;
+}
+body,dl,li,ul,a,div{
+    font-family: "微软雅黑";
+    font-size:12px;
+}
+a{
+    text-decoration: none;
+    color:#000;
+}
+ul li{
+    list-style-type: none;
+    float: left;
+}
+img{
+    vertical-align: top;
+    border: none;
+}
+input{
+    outline: none;
+}
+.container{
+    margin: 0 auto;
+    width: 1196px;
+}
+/*********清除浮动*********/
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+    overflow: hidren;
+    visibility: hidden;
+    height: 0;
+    font-size: 1px
+}
+body{
+    background: #f2f2f2;
+}

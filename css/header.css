@@ -1,0 +1,52 @@
+/*******头部header*******/
+.header{
+    height: 32px;
+    background: #333;
+}
+.header .list1{
+    float: left;
+    margin-right: 10px;
+}
+.header .list2{
+    float: right;
+}
+.header ul li{
+    height: 32px;
+    line-height: 32px;
+}
+.header a{
+    color: #fff;
+    font-size: 14px;
+}
+.header a:hover{
+    color: #2884c7;
+}
+.header .list1 li{
+    color:#888;
+}
+.header .list1 li .index{
+    margin-right: 18px;
+    color:#fff;
+}
+.header .list1 li .index:hover{
+    color: #2884c7;
+}
+.header span{
+    color: #fff;
+    padding: 0 4px;
+}
+/* 隐藏 */
+.header .list2 li{
+    overflow: hidden;
+}
+.header .list2 a{
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.header .list2 a:hover{
+    background: #fff;
+}

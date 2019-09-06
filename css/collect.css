@@ -1,0 +1,141 @@
+html body{
+    background: #fff;
+    
+}
+.favorite{
+    border:1px solid #ececec;
+    margin-top:20px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+}
+.favorite li{
+    font-size: 14px;
+    text-align: center;
+}
+.favorite li:first-child{
+    width: 136px;
+    font-weight: bold;
+    border-right: 2px dashed #ececec;
+}
+.favorite li:last-child{
+    padding-left: 30px;
+    color:#ff464e;
+    
+}
+/* 未添加商品 */
+
+.none_collect{
+    /* display: none; */
+    background: url(../img/collect.gif) no-repeat;
+    width: 720px;
+    height: 355px;
+    margin:65px 125px 125px;
+    overflow: hidden;
+}
+.none_collect dl{
+    margin-top:80px ;
+    margin-left: 256px;
+}
+.none_collect dt{
+    font-size: 22px;
+    margin-bottom: 20px;
+    line-height: 33px;
+}
+.none_collect dd{
+    font-size: 16px;
+}
+.none_collect .iconfont{
+    display: inline-block;
+    border:1px solid #ccc;
+    width:25px;
+    height: 25px;
+    background: #f4f4f4;
+    color:#ff464e;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 26px;
+    margin:0 5px;
+    cursor: default;
+}
+/* 添加了商品 */
+.collectWrap{
+    display: none;
+}
+.collectWrap .collect_content{
+    float: left;
+    width:20%;
+    margin-bottom:20px;
+    position: relative;
+}
+.collectWrap ul{
+    margin:0 10px;
+    position: relative;
+    padding-bottom: 10px;
+    border:1px solid transparent;
+}
+.collectWrap ul:hover{
+    border:1px solid #ececec;
+}
+.collectWrap ul:hover span{
+    display: block;
+}
+.collectWrap ul li{
+    clear: both;
+}
+.collectWrap ul img{
+    width:100%;
+}
+.collectWrap  .collect_price{
+    margin-left:10px;
+    font-size: 18px;
+    color:#ff464e;
+}
+.collectWrap  .collect_price del{
+    color:#bbb;
+    font-size:16px;
+}
+.collectWrap  .collect_name{
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 14px;
+}
+.collectWrap ul span{
+    display: none;
+    position: absolute;
+    top:18px;
+    right: 22px;
+    width:30px;
+    height: 30px;
+    background: #ccc;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 30px;
+    cursor: pointer;
+}
+.collectWrap ul span:hover{
+    color:#ff464e;
+}
+.collectWrap .redelete{
+    display: none;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background: rgba(240, 240, 240, .5);
+    z-index: 9;
+    left: 0;
+    top: 0;
+}
+.collectWrap .redelete p{
+    height: 30%;
+    background: #fff;
+    text-align: center;
+    margin-top:40%;
+    line-height: 30px;
+    font-size: 14px;
+    color:#555;
+}
+.collectWrap .redelete .re_deletion{
+    color: #ff464e;
+    cursor: pointer;
+}

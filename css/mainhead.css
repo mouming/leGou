@@ -1,0 +1,201 @@
+/*******导航nav*******/
+.nav{
+    height: 120px;
+    background: #fff;
+}
+.nav .logo{
+    float: left;
+}
+.nav form{
+    float: left;
+    width: 600px;
+    height: 36px;
+    margin-top: 32px;
+    border: 2px solid #2884c7;
+}
+.nav form input:nth-child(1){
+    height: 36px;
+    float: left;
+    line-height: 36px;
+    width: 446px;
+    border: none;
+    outline: none;
+    float: left;
+    font-size: 14px;
+    color:rgb(204,204,204);
+    margin-left: 20px;
+}
+.nav form input:nth-child(2){
+    width: 134px;
+    height: 36px;
+    background: #2884c7;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+}
+.nav .cart{
+    float: right;
+    margin-top: 32px;
+    text-align: center;
+}
+.nav .cart a{
+    display: block;
+    width: 164px;
+    height: 38px;
+    font-size: 16px;
+    line-height: 38px;
+    color: #2884c7;
+    border: 1px solid #ddd;
+}
+.nav .cart a:hover{
+    background: #2884c7;
+    border-color: #2884c7;
+    color: #fff;
+}
+.nav .cart a span{
+    margin-right: 5px;
+    font-size: 20px;
+}
+/* 菜单栏 */
+.menu{
+    background: #fff;
+    height: 40px;
+    border-bottom:2px solid #011912;
+}
+.menu .container>li{
+    float: left;
+    line-height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 24px;
+}
+ .container>li:hover{
+    color:#2884c7;
+}
+.menu .menu_all {
+    width:196px;
+    /* height: 40px; */
+    background: #011912;
+    color:#fff;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    z-index: 999;
+}
+.menu .menu_all:hover{
+    color:#fff;
+}                   
+.menu .iconfont{
+    font-size: 14px;
+}
+.menu .menu_show{
+    display:none;
+}
+.menu .menu_list{
+    position:absolute;
+    top:40px;
+    left:0px;
+    background: rgba(0, 0, 0, .8);
+    width:100%;
+    font-size: 14px;
+    padding-top:18px;
+}
+.menu .menu_list dd{
+    height: 66px;
+    line-height: 66px;
+}
+.menu .menu_list dd:hover{
+    background: #2884c7;
+}
+.menu_list dd a{
+    display: block;
+    color:#fff;
+    text-align: left;
+    padding:0 22px;
+    font-size: 14px;
+}
+.menu_list dd .iconfont{   
+    width: 30px;        
+    font-size: 20px;
+    float:right;
+    text-align: center;
+}
+/* 具体商品列表 */
+.menu_context{
+    display: none;
+    position: absolute;
+    top:40px;
+    left:196px;
+    width:975px;
+    height:414px;
+    box-shadow: 2px 0px 4px 2px #ccc;
+    background: #fff;
+    padding-left: 25px;
+}
+.menu_context img {
+    width:60px;
+}
+.list_content{
+    display: none;
+}
+.list_context1 dl{
+    float:left;
+    padding-top:48px;
+    padding-right: 126px;
+}
+.list_context1 dl dd{
+    float: left;
+}
+.list_context1 dl dd{
+    margin-bottom: 35px;
+    clear: both;
+}
+.list_context1 dd:last-child{
+    margin-bottom: 0;
+}
+.list_context1 dd a{
+    float: left;
+    text-align: left;
+}
+.list_context1 dd img{
+    float: left;
+}
+.list_context1 dd span{
+    float: left;
+    line-height: 20px;
+    margin-top:10px;
+    padding-left: 16px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.list_context1 dd i{
+    font-style: normal;
+    display: block;
+    color:#ed1c24;
+    font-weight: 400;
+}
+.list_context2 dl{
+    float: left;
+    font-weight: bold;
+    margin-right: 118px;
+}
+.list_context2 dl:last-child{
+    margin-right: 0;
+}
+.list_context2 dt{
+    color:#333;
+    font-size: 14px;
+    margin-top:12px;
+}
+.list_context2 dd{
+    margin-bottom: 20px;
+}
+.list_context2 img{
+    width:40px;
+    margin-right: 10px;
+}
+.list_context3 {
+    padding-top:50px;
+}

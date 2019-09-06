@@ -1,0 +1,79 @@
+[
+    {
+        "uid":"001",
+        "class":"tv",
+        "name":"超5 X55漫威版",
+        "src":"tv1.jpg",
+        "discribe":["全面屏","4K HDR高色域","2GB+16GB"],
+        "price":"3699",
+        "size":"55吋"
+    },
+    {
+        "uid":"002",
+        "class":"tv",
+        "name":"X40N",
+        "src":"tv2.jpg",
+        "discribe":["SDR转HDR","16GB大存储","Mstar四核处理器"],
+        "price":"1699",
+        "size":"40吋"
+    },{
+        "uid":"003",
+        "class":"tv",
+        "name":"X55L",
+        "src":"tv3.jpg",
+        "discribe":["Mstar四核处理器","16G大存储","4K HDR超高清"],
+        "price":"2899",
+        "size":"55吋"
+    },{
+        "uid":"004",
+        "class":"tv",
+        "name":"X65L",
+        "src":"tv4.jpg",
+        "discribe":["125%超高色域","16G大存储","Mstar四核处理器"],
+        "price":"3599",
+        "size":"65吋"
+    },{
+        "uid":"005",
+        "class":"tv",
+        "name":"X65S",
+        "src":"tv5.jpg",
+        "discribe":["Mstar 6A938芯片","4K HDR高色域","3GB+32GB"],
+        "price":"4999",
+        "size":"65吋"
+    },{
+        "uid":"006",
+        "class":"part",
+        "name":"乐视旋转壁挂支架LS050NN2",
+        "src":"part1.jpg",
+        "fitter":["超4 X50","超4 X50 Pro","超4 X50中超版","X55N","X55L","X65N","X65L","X55C"],
+        "price":"199"
+    },{
+        "uid":"007",
+        "class":"part",
+        "name":"超4 X75云底座",
+        "src":"part2.jpg",
+        "fitter":["超4 X75"],
+        "price":"369"
+    },{
+        "uid":"008",
+        "class":"part",
+        "name":"乐视固定挂架 LS043NN1",
+        "src":"part3.jpg",
+        "fitter":["S40 Air系列","S40 Air L系列","超3 X40","超3 X40 芈月版","超3 X43","X40 S","X43 S","X40 S中超版","X43 S中超版（不支持第一代s40电视）","X40N","X40L"],
+        "price":"49"
+    },{
+        "uid":"009",
+        "class":"part",
+        "name":"乐视运动蓝牙耳机",
+        "src":"part4.jpg",
+        "fitter":["乐视 乐系列手机","以及标准蓝牙播放协议的设备"],
+        "price":"199"
+    },{
+        "uid":"010",
+        "class":"part",
+        "name":"超4 X50 Pro云底座",
+        "src":"part5.jpg",
+        "fitter":["超4 X50 Pro"],
+        "price":"399"
+    }
+]

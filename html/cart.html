@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>我的购物车</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/cookie.js"></script>
+    
+</head>
+<body>
+    <div class="header"></div>
+    <div class="w">
+        <div class="logo clearfix">
+            <div class="logol">
+                <a href="../index.html"></a>
+                <span>我的购物车</span>
+            </div>
+            <ul class="logor">
+                <li class="cur">
+                    <div class="bg-line"></div>
+                    <div class="num">1</div>
+                    <div class="text">我的购物车</div>
+                </li>
+                <li>
+                    <div class="bg-line"></div>
+                    <div class="num">2</div>
+                    <div class="text">填写核对订单信息</div>
+                </li>
+                <li>
+                    <div class="bg-line"></div>
+                    <div class="num">3</div>
+                    <div class="text">成功提交订单</div>
+                </li>
+            </ul>
+        </div>
+        <div class="cart-goods" >
+            <div class="all-goods clearfix">
+                <div class="all-left">全部商品 <span id="goods-num">1</span></div>
+                <div class="all-right">
+                    配送至
+                    <div class="address">
+                        <span>北京北京市朝阳区</span> 
+                        <div class="select_address">
+                            <div class="addr_dt">选择新地址</div>
+                            <div class="addr_dd">
+                                <div class="tabs ">
+                                    <span id="province_tab" class="click_border">北京</span>
+                                    <span id="city_tab">北京市</span>
+                                    <span id="district_tab">朝阳区</span>
+                                    <strong class="close"></strong>
+                                </div>
+                                <div class="addr_content">
+                                    <ul id="province " class="clearfix" style="display: block">
+                                        <li>北京</li>
+                                        <li>上海</li>
+                                        <li>上海</li>
+                                        <li>上海</li>
+                                        <li>上海</li>
+                                    </ul>
+                                     <ul id="city" class="clearfix">
+                                        <li>上海市</li>
+                                        <li>北京</li>
+                                        <li>上海</li>
+                                        <li>上海</li>
+                                        <li>上海</li>
+                                    </ul>
+                                    <ul id="district" class="clearfix">
+                                        <li>北京区</li>
+                                        <li>上海</li>
+                                        <li>上海</li>
+                                        <li>上海</li>
+                                        <li>上海</li>
+                                    </ul> 
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <ul class="title clearfix">
+                <li class="product_select"><input type="checkbox" class="checkbox" name="select_all">全选</li>
+                <li class="product_content">商品</li>
+                <li class="product_price">单价（元）</li>
+                <li class="product_number">数量</li>
+                <li class="product_cost">小计（元）</li>
+                <li class="product_exercisable">操作</li>
+            </ul>           
+            <!-- <ul class="detail clearfix">
+                <li class="detail_select"><input type="checkbox" class="checkbox"></li>
+                <li class="detail_picture"><img src="../img/part4.jpg" alt=""></li>
+                <li class="detail_content">乐视运动蓝牙耳机</li>
+                <li class="detail_price">199.00</li>
+                <li class="detail_number">
+                    <div class="detail_count">
+                        <strong>-</strong>
+                        <input type="text" value="1" class="detail_num">
+                        <strong>+</strong>
+                    </div>
+                </li>
+                <li class="detail_cost">199.00</li>
+                <li class="detail_exercisable">删除</li>
+            </ul> -->
+            <ul class="total clearfix">
+                <hr id="insert_good"/>
+                <li class="total_select"><input type="checkbox" class="checkbox" name="select_all">全选</li>
+                <li class="total_delete hover" id="deleteSelect">删除所选择商品</li>
+                <li class="total_continue "><a href="../index.html" class="hover">继续购物</a></li>
+                <li class="total_right">
+                    <div class="total_num">已选中<span name="totalSum">0</span>件产品</div>
+                    <div class="total_price">总计（不含运费）：<span >￥<i name="totalPrice">0</i></span></div>
+                    <a href="#" >去结算</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 购物车无商品 -->
+        <div class="no-goods" >
+            <div class="noneGood">
+                <img src="../img/cart1.jpg" >
+                <!-- 登录状态无商品 -->
+                <div class="login_cart" id="loginCart" style="display: none;">
+                    <span>你的购物车还是空的！</span><br>
+                    <span>赶紧行动吧！</span><br>
+                    <a href="../index.html" class="now_shop">马上去购物</a>
+                </div>
+                <!-- 未登录状态无商品 -->
+                <div class="login_cart" id="unloginCart" >
+                    <span>你的购物车还是空的！</span><br>
+                    <a href="login.html" class="login">登录</a><span>赶紧行动吧！</span><br>
+                    <a href="../index.html" class="now_shop">马上去购物</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <div class="sidebar"></div>
+    <script>
+        // 导入头部和尾部以及右侧悬浮栏
+        $(".header").load("header.html",function (){
+            if(show.name){
+                $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
+                $(".header .list1").eq(0).remove();
+                $(".header .list1 li").eq(0).remove();
+                $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+show.name+"'>"+show.name+"</a>");
+                $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+            }
+        })
+        $(".footer").load("footer.html",function (){
+        })
+        $(".sidebar").load("sidebar.html",function (){
+        })
+        
+        // 面向对象创建显示购物车及其功能的构造函数
+        function ShowCart(){
+            this.name="";
+            this.cookieCarts=[];
+            this.jsonData=[];
+        }
+        // 页面初始化
+        ShowCart.prototype.init=function (){
+            // 将url中获取的用户名存入name中
+            this.name= this.hasLocationName("uname");
+            // 获取json中商品数据
+            this.getJsonData();
+           
+        }
+        //判断url中是否存在name查询串的方法封装
+        ShowCart.prototype.hasLocationName=function (name){
+            var str=location.search.substr(1);
+            var uname="";
+            if(str){
+                var arr=str.split("&");
+                arr.forEach(function (item){
+                    if(item.split("=")[0]===name){
+                        uname= decodeURIComponent(item.split("=")[1]);
+                        return false;
+                    }
+                })
+            }
+            return uname;
+        }
+        // 获取cookiecarts的数据
+        ShowCart.prototype.getCookieData=function (){
+            this.cookieCarts=JSON.parse(getCookieName(this.name+"carts"));
+        }
+        // 获取json 中的商品数据
+        ShowCart.prototype.getJsonData=function (){
+            var _this=this;
+            $.getJSON("../json/goods.json",function (data){
+                _this.jsonData=data;
+                // 判断页面显示的内容
+                _this.judgePage();
+            });
+            $.getJSON("../json/pca.json",function(data){
+                console.log(data)
+            })
+        }
+        // 显示不同状态对应的页面布局
+        ShowCart.prototype.judgePage=function (){
+            if(this.name){
+                if(!(getCookieName(this.name+"carts")=="[]"||(!getCookieName(this.name+"carts")))){
+                    $(".cart-goods").css("display","block");
+                    $(".no-goods").css("display","none");
+                    // 显示具体商品
+                    this.showByCookie();
+                    //结算栏吸底效果
+                    this.suctionBottom();
+                    // 为生成的元素添加购物车功能
+                    //全选全不选功能
+                    this.allcheckbox();
+                    //加减商品数量
+                    this.addOrCut();
+                    //删除商品
+                    this.deleteGood();
+                    // 统计选中商品的价格和数量
+                    this.statisticsNum();
+                    // 统计购物车中的商品数量
+                    this.addCartNum();
+                    //地址三级联动
+                    this.addressCheck(".address",".select_address",".tabs",".addr_content");
+                }else{
+                    $(".cart-goods").css("display","none");
+                    $(".no-goods").css("display","block").find("#loginCart").css("display","block").end().find("#unloginCart").css("display","none");
+                }
+            }else{
+                $(".cart-goods").css("display","none");
+                $(".no-goods").css("display","block").find("#unloginCart").css("display","block").end().find("#loginCart").css("display","none");
+            }
+        }
+        //结算栏吸底效果
+        ShowCart.prototype.suctionBottom=function (){
+            var offset=$(".total").offset();
+            onscroll=function (){
+                var maxH=(document.documentElement||document.body).clientHeight+(document.documentElement||document.body).scrollTop;
+                if(offset.top>=maxH-$(".total").outerHeight()){
+                    $(".total").css({
+                        position:"fixed",
+                        bottom:0
+                    })
+                }else{
+                    $(".total").css({
+                        position:"relative",
+                    })
+                }
+            }.bind(this)
+        }
+        // 登录成功后的购物车应显示的内容
+        ShowCart.prototype.showByCookie=function (){
+            var _this=this;
+            var str="";
+            // 获取cookie数据
+            this.getCookieData();
+            this.jsonData.forEach(function (item){
+                _this.cookieCarts.forEach(function (ele){
+                    if(ele.uid===item.uid){
+                        str+=`
+                            <ul class="detail clearfix">
+                                <li class="detail_select"><input type="checkbox" class="checkbox " name="select_sdl"></li>
+                                <li class="detail_picture"><img src="../img/${item.src}" alt=""></li>
+                                <li class="detail_content">${item.name}</li>
+                                <li class="detail_price">${item.price}.00</li>
+                                <li class="detail_number">
+                                    <div class="detail_count">
+                                        <strong count="cut">-</strong>
+                                        <input type="text" value="${ele.num}" class="detail_num " uid="${item.uid}">
+                                        <strong count="add">+</strong>
+                                    </div>
+                                </li>
+                                <li class="detail_cost">${item.price*ele.num}.00</li>
+                                <li class="detail_exercisable">删除</li>
+                            </ul>
+                        `;
+                        return false;
+                    }
+                })
+            })
+            $(".total").before(str);
+        }
+        
+        // 全选全不选功能
+        ShowCart.prototype.allcheckbox=function (){
+            var _this=this;
+            $("input[name='select_all']").click(function (){
+                if($(this).prop("checked")){
+                    $("input[name='select_sdl']").prop("checked",true);
+                    $("input[name='select_all']").prop("checked",true);
+                }else{
+                    $("input[name='select_all']").prop("checked",false);
+                    $("input[name='select_sdl']").prop("checked",false);
+                }
+                _this.statisticsNum();
+                _this.addCartNum();
+            })
+            $("input[name='select_sdl']").click(function (){
+                var flag=true;
+                $("input[name='select_sdl']").each(function(index,item){
+                    if(!item.checked){
+                        flag=false;
+                        return false;
+                    }
+                })
+                $("input[name='select_all']").prop("checked",flag);
+                _this.statisticsNum();
+                _this.addCartNum();
+            })
+        }
+        // 增减商品数量
+        ShowCart.prototype.addOrCut=function (){
+            // console.log($("strong[count='cut']"))
+            var _this=this;
+            //添加数量点击事件
+            $("strong[count='add']").click(function (){
+                _this.updataGood(this);
+                _this.updataCartCookie();
+                _this.statisticsNum();
+                _this.addCartNum();
+                
+            })
+            $("strong[count='cut']").click(function (){
+                //
+                _this.updataGood(this);
+                _this.updataCartCookie();
+                _this.statisticsNum(); 
+                _this.addCartNum();
+            })
+            $(".detail_num").blur(function (){
+                _this.updataGood(this);
+                _this.updataCartCookie();
+                _this.statisticsNum(); 
+                _this.addCartNum();
+            })
+        }
+        //根据此件商品数量计算价格
+        ShowCart.prototype.updataGood=function (ele){
+            var num=$(ele).parent().find(".detail_num").val()-0;
+            if($(ele).attr("count")==="add"){
+                num++;
+            }else if($(ele).attr("count")==="cut"){
+                num--;
+            }
+            $(ele).parent().find(".detail_num").val(num);
+            var parentUl=$(ele).parent().parent().parent();
+            var cost=parentUl.find(".detail_price").html()*num;
+            parentUl.find(".detail_cost").html(cost+".00");
+            parentUl.find("input[name=select_sdl]").prop("checked",true);
+            //判断复选框是否全部选中
+            var flag=true;
+            $("input[name='select_sdl']").each(function(index,item){
+                if(!item.checked){
+                    flag=false;
+                    return false;
+                }
+            })
+            $("input[name='select_all']").prop("checked",flag);
+            if(num==0){
+                parentUl.remove();
+            }
+        }
+        //更新购物车cookie信息
+        ShowCart.prototype.updataCartCookie=function (){
+            this.cookieCarts=[];
+            var _this=this;
+            $(".detail").each(function (index){
+                _this.cookieCarts.push({
+                    uid:$(this).find(".detail_num").attr("uid"),
+                    num:$(this).find(".detail_num").val()
+                })
+            })
+            var date=new Date();
+            date.setDate(date.getDate()+10);
+            setCookie(this.name+"carts",JSON.stringify(this.cookieCarts),date,"/");
+            if(JSON.stringify(this.cookieCarts)=="[]"){//当购物车内没有商品时重新判断页面显示;
+                this.judgePage();
+            }
+        }
+        //删除商品
+        ShowCart.prototype.deleteGood=function(){
+            var _this=this;
+            $(".detail_exercisable").click(function (){
+                $(this).parent().remove();
+                _this.updataCartCookie();
+                _this.statisticsNum();
+                _this.addCartNum();
+            })
+            $("#deleteSelect").click(function (){
+                $(".detail ").each(function (index){
+                    if($(this).find(".checkbox").prop("checked")){
+                        $(this).remove();
+                    }
+                })
+                _this.updataCartCookie();
+                _this.statisticsNum();
+                _this.addCartNum();
+            })
+        }
+        
+        // 统计选中商品的价格和数量
+        ShowCart.prototype.statisticsNum=function (){
+            var sum=0;
+            var totalPrice=0;
+            $(".detail ").each(function (index){
+                if($(this).find(".checkbox").prop("checked")){
+                    sum+=Number($(this).find(".detail_num").val());
+                    totalPrice+=Number($(this).find(".detail_cost").html());
+                }
+            })
+            $("span[name='totalSum']").html(sum);
+            $("i[name=totalPrice]").html(totalPrice);
+        }
+        
+        // 统计购物车商品的数量
+        ShowCart.prototype.addCartNum=function (){
+            var sum=0;
+            $(".detail ").each(function (index){
+                sum+=Number($(this).find(".detail_num").val());
+            })
+            $("#goods-num").html(sum);
+        }
+        ShowCart.prototype.addressCheck=function (targetEle,showEle,addrTab,addrContent){
+            $(targetEle).click(function (){
+                $(showEle).css("display","block");
+                $(addrTab).delegate("span","click",function(){
+                    event.stopPropagation();
+                    $(this).parent().find("span").removeClass("click_border");
+                    $(this).addClass("click_border");
+                    $(addrContent).find("ul").css("display","none").eq($(this).index()).css("display","block");
+                })
+            })
+        }
+        var show=new ShowCart();
+        show.init();
+        // [{"uid":"001","num":2},{"uid":"006","num":3},{"uid":"003","num":4}]
+    </script>
+</body>
+</html>

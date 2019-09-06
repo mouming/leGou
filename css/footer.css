@@ -1,0 +1,97 @@
+/*******服务server*******/
+
+.server{
+    height: 80px;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+.server ul{
+    height: 38px;
+    margin-top: 20px;
+}
+.server ul li{
+    width: 25%;
+    text-align: center;
+}
+.server ul .iconfont{
+    font-size: 36px;
+    margin-right: 5px;
+    color: #666;
+}
+.server ul a{
+    font-size: 16px;
+    display: inline-block;
+    color: #666;
+    margin-top: -20px;
+    vertical-align: middle;
+}
+.server ul a:hover{
+    color:#2884c7;
+}
+/*******底部footer*******/
+.footer{
+    height: 274px;
+    background: #151515;
+}
+.footer .text{
+      padding-top: 28px;
+      padding-left: 59px;
+      margin-bottom: 51px;
+}
+.footer .text dl{
+    float: left;
+    width: 200px;
+}
+.footer .text dl dt a{
+    font-size: 14px;
+    display: block;
+    line-height: 30px;
+    color: #c4c2c2;
+}
+.footer .text dl dd a{
+    display: block;
+    line-height: 22px;
+    color: #888;
+}
+.footer .text dl dd a:hover{
+    color: #2884c7;
+}
+.footer .text .connect{
+    float: right;
+    text-align: center;
+}
+.footer .text .connect dt{
+    color: #f05353;
+    font-size: 22px;
+}
+.footer .text .connect a{
+    display: block;
+    line-height: 32px;
+    background: #2d2c2d;
+    border: 1px solid #575756;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.footer .text .connect a:hover{
+   /* color: #2884c7; */
+   background: #474547;
+}
+.footer .text .connect .time{
+    color: #fff;
+    font-size: 14px;
+    margin: 0 20px;
+}
+.footer .text .connect .info{
+    color: #888;
+    margin-top: 10px;
+}
+.footer p{
+    margin-top: 10px;
+    color: #888;
+    text-align: center;
+}
+.footer .news{
+    border-bottom: 1px solid #fff;
+}
