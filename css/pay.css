@@ -112,8 +112,52 @@ html body{
 .pay_tab{
     margin-top:10px;
     border:1px solid #eaeaea;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
 }
 .pay_tab ul{
     background: #f9f9f9;
     color: #9d9d9d;
+    border-bottom: 1px solid #eaeaea;
+    height: 46px;
 }
+.pay_tab ul li{
+    padding:0 22px;
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #eaeaea;
+    border-top: none;
+    border-bottom: none;
+}
+.pay_tab ul li:first-child{
+    border-left: none;
+    border-right: none;
+}
+.pay_tab ul .click_on{
+    border-top: 4px solid #3e93e1;
+    color: #3e93e1;
+    height: 43px;
+    line-height: 38px;
+    background: #fff;
+}
+.pay_tab .pay_code{
+    margin: 20px auto;
+    width: 200px;
+    text-align: center;
+    color: #a9a9a8;
+}
+.pay_code .alipay_wx p{
+    background: url(../img/wechat.png) no-repeat ;
+    padding-top: 22px;
+    padding-left: 18px;
+    margin-left: 20px;
+}
+ .pay_code .loading img{
+     width: 160px;
+ }
+ .pay_code .alipay_zfb p{
+    background: url(../img/alipay.png) no-repeat ;
+    padding-top: 26px;
+    padding-left: 30px;
+    margin-left: 10px;
+ }

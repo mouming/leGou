@@ -17,7 +17,7 @@
         <div class="logo clearfix">
             <div class="logol">
                 <a href="../index.html"></a>
-                <span>我的结算页</span>
+                <span>我的支付页</span>
             </div>
             <ul class="logor">
                 <li class="cur">
@@ -44,29 +44,121 @@
                     <div class="pay_money">应付金额：<span >4299.00</span>元</div>
                 </li>
                 <li class="order_number">
-                    <span>订单号：<i>439104124843</i></span> 
-                    <span>请在<i>2小时30分45秒</i>内完成支付，以免订单逾期取消</span>
+                    <span>订单号：<i id="order_num">439104124843</i></span> 
+                    <span>请在<i id="time">2小时30分45秒</i>内完成支付，以免订单逾期取消</span>
                 </li>
             </ol>
         </div>
         <div class="pay_tab">
             <ul class="clearfix">
-                <li>微信支付</li>
-                <li>支付宝支付</li>
+                <li class="click_on">微信支付</li>
+                <li >支付宝支付</li>
             </ul>
             <div class="pay_code">
-                <div class="pay_content">
-                    <span class="alipay_tit_wx">
-                        <p>使用微信扫码支付，请使用5.0版本以上的微信</p>
+                <div class="pay_content" >
+                    <span class="alipay_wx">
+                        <p>使用微信扫码支付</p>
                     </span>
                     <span class="ewm_box">
-                        <p class="loading" ><img src="../img/code.jpg"></p>
+                        <p class="loading" ><img src="../img/wechat_code.png"></p>
                         <p class="" style="padding-top: 9px;">打开手机端微信<br>扫一扫继续付款</p>
+                        <p class="p_text_fail"></p>
+                    </span>
+                </div>
+                <div class="pay_content" style="display: none;">
+                    <span class="alipay_zfb">
+                        <p>使用支付宝钱包支付</p>
+                    </span>
+                    <span class="ewm_box">
+                        <p class="loading" ><img src="../img/alipay_code.jpg"></p>
+                        <p class="" style="padding-top: 9px;">打开手机端支付宝<br>扫一扫继续付款</p>
                         <p class="p_text_fail"></p>
                     </span>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        // 导入头部和尾部以及右侧悬浮栏
+        // $(".header").load("header.html",function (){
+        //     if(show.name){
+        //         $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
+        //         $(".header .list1").eq(0).remove();
+        //         $(".header .list1 li").eq(0).remove();
+        //         $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+showpay.name+"'>"+showpay.name+"</a>");
+        //         $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+        //     }
+        // })
+        function showPay(){
+            this.name="";
+            this.money="";
+            this.getOrder="";
+            this.towHourData="";
+        }
+         // 页面初始化
+         showPay.prototype.init=function (){
+            // 将url中获取的用户名存入name中
+            this.name= this.hasLocationName("uname");
+            // 从url中获取付款金额存入this.money中
+            this.money=this.hasLocationName("money");
+            // 从url中获取付款订单号存入this.money中
+            this.getOrder=this.hasLocationName("orderKey");
+            // 生成订单号
+            // this.createOrder();
+           //两小时倒计时
+           this.countdown();
+        }
+        //判断url中是否存在name查询串的方法封装
+        showPay.prototype.hasLocationName=function (name){
+            var str=location.search.substr(1);
+            var uname="";
+            if(str){
+                var arr=str.split("&");
+                arr.forEach(function (item){
+                    if(item.split("=")[0]===name){
+                        uname= decodeURIComponent(item.split("=")[1]);
+                        return false;
+                    }
+                })
+            }
+            return uname;
+        }
+        // 生成订单号?放于结算页
+        // showPay.prototype.createOrder=function (){
+        //     var date=new Date();
+        //     this.getOrder=date.getTime()+parseInt(Math.random()*100000);
+        //     $("#order_num").html(this.getOrder);
+        // }
+        showPay.prototype.createOrder=function (){
+            $("#order_num").html(this.getOrder);
+        }
+        showPay.prototype.countdown=function (){
+            var end=new Date();
+            end.setHours(end.getHours()+2);
+            var _this=this;
+            var timer=setInterval(function(){
+                _this.showTime(end);
+            },1000);
+            if($(".order_number").eq(1).html()==="商品已逾期，订单已取消"){
+                clearInterval(timer);
+            }
+        }
+        showPay.prototype.showTime=function (end){
+            var now=new Date();
+            var t=(end.getTime()-now.getTime())/1000;
+            if(t<0){
+                $("#time").parent().html("商品已逾期，订单已取消");
+            }
+            //剩余的小时数 
+            var h =parseInt( t/3600 );
+            //剩余分钟
+            var m = parseInt( (t - h*3600)/60 );
+            //剩余的秒
+            var s = parseInt(t - h * 3600 - m * 60) ;
+            $("#time").html(h + "小时" + m + "分钟" + s + "秒") ;
+        }
+        var showpay=new showPay();
+        showpay.init();
+    </script>
 </body>
 </html>
