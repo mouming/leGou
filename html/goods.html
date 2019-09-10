@@ -82,17 +82,17 @@
         $("#foot").load("footer.html");  
         //页面加载时从后台获取所有商品数据；
         //将数据填充在页面中；
-        window.onload=function(){
-            new GoodsInit().init();
-        }
+  
         function GoodsInit(){
             this.goodsEle=$("#goods");
             this.goods=[];
+            this.name="";
 
         }
         GoodsInit.prototype.init=function(){
             this.getGoods();
             this.changePage();
+            this.name=this.hasLocationName("uname");
         }
         GoodsInit.prototype.getGoods=function(){//从数据库中获得所有商品信息
             //判断url中是否有class属性，并且得到属性值，按属性值分类显示；
@@ -228,6 +228,21 @@
             })
         }
 
+        //判断url中是否存在name查询串的方法封装
+        GoodsInit.prototype.hasLocationName=function(name){
+            var str=location.search.substr(1);
+            var uname="";
+            if(str){
+                var arr=str.split("&");
+                arr.forEach(function (item){
+                    if(item.split("=")[0]===name){
+                        uname= decodeURIComponent(item.split("=")[1]);
+                        return false;
+                    }
+                })
+            }
+            return uname;
+        }
         //页面刷新时，判断是否有收藏的cookie信息
         GoodsInit.prototype.gCookie=function(){
             var flag=true;//表示没有登录
@@ -271,6 +286,9 @@
             });   
         }  
 
+        
+        var newGoods=new GoodsInit();
+        newGoods.init();
         $("#goods").on("click",(".collect"),function(e){//点击收藏
             e.stopPropagation();
                 //首先判断是否登录;
@@ -335,7 +353,11 @@
         $("#goods").on("click","li",function (){//点击li,跳转到详情页；
             // e.stopPropagation();
             var uid=encodeURIComponent($(this).children()[0].innerHTML);
-            location.href="productdetails.html?uid="+uid;
+            if(newGoods.name){
+                location.href="productdetails.html?uid="+uid+"&uname="+newGoods.name;
+            }else{
+                location.href="productdetails.html?uid="+uid;
+            }       
         });  
 
       
