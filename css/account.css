@@ -84,6 +84,9 @@ html body{
     padding-left: 5px;
 }
 .get_message dd{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 12px;
     width: 204px;
     min-height: 116px;
     border: 2px solid #d8d6d6;
@@ -96,10 +99,15 @@ html body{
 .get_message dd:hover .set_default{
     display: block;
 }
-.get_message .click_message{
+.get_message .clicked_message{
     border-color: #f01e00;
     background: #fffcfa url(../img/account_bg.jpg) no-repeat 213px 98px;
 }
+.get_message .click_message:hover{
+    border-color: #f01e00;
+    background: #fffcfa url(../img/account_bg.jpg) no-repeat 213px 98px;
+}
+
 .get_message ol li{
     color:#666;
 }
@@ -115,9 +123,16 @@ html body{
 .get_message ol .myself_addr{
     height: 50px;
 }
+.get_message ol .revise{
+    display: none;
+}
+.get_message :hover ol .revise{
+    display: block;
+}
 .get_message ol .revise a{
     color:#ff8200;
     margin-right: 32px;
+    cursor: pointer;
 }
 .get_message .set_default{
     display: none;
@@ -137,6 +152,7 @@ html body{
     color:#fff;
 }
 .get_message .add_addr{
+    clear: both;
     display: block;
     margin-top:12px;
     width:130px;
@@ -403,6 +419,7 @@ html body{
 }
 .tilt .user_text .user_title{
     color:#ff8200;
+    display: none;
 }
 .tilt .select_up{
     border-top:1px solid #ccc;

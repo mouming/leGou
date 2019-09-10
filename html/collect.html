@@ -47,18 +47,32 @@
     <div class="footer"></div>
     <div class="sidebar"></div>
     <script>
+        //导入头部和尾部以及右侧悬浮栏       
         $(".header").load("header.html",function (){
             $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
             $(".header .list1").eq(0).remove();
             $(".header .list1 li").eq(0).remove();
             $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+showCollect.name+"'>"+showCollect.name+"</a>");
             $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+            //设置个人中心超链接
+            $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+showCollect.name);
         });
         $(".mainhead").load("mainhead.html",function (){
             
         });
-        $(".footer").load("footer.html",function(){});
-        $(".sidebar").load("sidebar.html",function(){});
+        $(".footer").load("footer.html",function (){
+        })
+        $(".sidebar").load("sidebar.html",function (){
+            if(showCollect.name){
+                $(".side-cart").attr("href","cart.html?uname="+showCollect.name);
+                $(".side-collect").attr("href","collect.html?uname="+showCollect.name);
+            }
+            $(".sidebar").find("a").mouseover(function(){
+                $(this).next().css("display","block");
+            }).mouseout(function(){
+                $(this).next().css("display","none");
+            })
+        })
         function ShowCollect(){
             this.name="";
             this.cookieCollect=[];

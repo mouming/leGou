@@ -41,7 +41,7 @@
             <ol>
                 <li>
                     <span class="pay_title">恭喜你，订单已经成功提交</span>
-                    <div class="pay_money">应付金额：<span >4299.00</span>元</div>
+                    <div class="pay_money">应付金额：<span ></span>元</div>
                 </li>
                 <li class="order_number">
                     <span>订单号：<i id="order_num">439104124843</i></span> 
@@ -79,16 +79,16 @@
         </div>
     </div>
     <script>
-        // 导入头部和尾部以及右侧悬浮栏
-        // $(".header").load("header.html",function (){
-        //     if(show.name){
-        //         $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
-        //         $(".header .list1").eq(0).remove();
-        //         $(".header .list1 li").eq(0).remove();
-        //         $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+showpay.name+"'>"+showpay.name+"</a>");
-        //         $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
-        //     }
-        // })
+        //导入头部和尾部以及右侧悬浮栏
+        $(".header").load("header.html",function (){
+            if(showpay.name){
+                // $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
+                // $(".header .list1").eq(0).remove();
+                $(".header .list1 li").eq(0).remove();
+                $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+showpay.name+"'>"+showpay.name+"</a>");
+                $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+            }
+        })
         function showPay(){
             this.name="";
             this.money="";
@@ -104,7 +104,9 @@
             // 从url中获取付款订单号存入this.money中
             this.getOrder=this.hasLocationName("orderKey");
             // 生成订单号
-            // this.createOrder();
+            this.createOrder();
+            //生成金额数
+            this.createMoney();
            //两小时倒计时
            this.countdown();
         }
@@ -123,14 +125,12 @@
             }
             return uname;
         }
-        // 生成订单号?放于结算页
-        // showPay.prototype.createOrder=function (){
-        //     var date=new Date();
-        //     this.getOrder=date.getTime()+parseInt(Math.random()*100000);
-        //     $("#order_num").html(this.getOrder);
-        // }
+        
         showPay.prototype.createOrder=function (){
             $("#order_num").html(this.getOrder);
+        }
+        showPay.prototype.createMoney=function(){
+            $(".pay_money").find("span").html(this.money);
         }
         showPay.prototype.countdown=function (){
             var end=new Date();
