@@ -68,7 +68,7 @@
     <div class="card_info_all containert clearfix">
         <div class="card_info clearfix containert " id="card_info">
             <ul>
-                <li class="cc" index=0 ><span>商品介绍</span></li>
+                <li class="cc" index=0 ><span class="hh">商品介绍</span></li>
                 <li class="cc" index=1><span>参数规格</span></li>
                 <li class="cc" index=2><span>评价晒单</span></li>
                 <li class="cc" index=3><span>售后服务</span></li>
@@ -320,7 +320,7 @@ ShowDetail.prototype.showPage=function(){
                         <span class="title_two"><a>${item.name}</a></span>
             </div>
             <div class="read_info">
-                <div class="slogan"><a>${item.fitter[0]} | ${item.fitter[1]?$item.fitter[1]:"X55N"} | ${item.fitter[2]?$item.fitter[2]:"X43 S"}</a></div>
+                <div class="slogan"><a>${item.fitter[0]} | ${item.fitter[1]?item.fitter[1]:"X55N"} | ${item.fitter[2]?item.fitter[2]:"X43 S"}</a></div>
                     <div class="learn_more">
                         <a href="#"><span>超5 X55钢铁侠限量版来袭</span></a>
                 </div>

@@ -416,7 +416,7 @@
                 if(location.search=="?card=off"){
                     $("#login").html("登入");
                     $("#register").html("注册");
-                }else if(location.search!="?a"){
+                }else if(location.search!="?a"&&location.host==="localhost"){
                     location.href="php/login.php";
                 }
               }
