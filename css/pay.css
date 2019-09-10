@@ -1,0 +1,163 @@
+html body{
+    background: #fff;
+    
+}
+.w{
+    width:990px;
+    margin:0 auto;
+}
+/* logo */
+.logo{
+    /* height: 120px; */
+    overflow: hidden;
+}
+.logol{
+    background: url(../img/logo.png) no-repeat;
+    float: left;
+    
+}
+.logol a{
+    display:inline-block;
+    width: 180px;
+    height: 120px;
+}
+.logol span{
+    line-height: 120px;
+    float:right ;
+    color:#999;
+    padding-left: 20px;
+}
+.logor{
+    float: right;
+    margin-top:35px;
+    text-align: center;
+}
+.logor li{
+    width: 140px;
+    position: relative;
+}
+.logor .bg-line{
+    position:absolute;
+    width:60px;
+    height: 2px;
+    right:0px;
+    top:9px;
+    background: #ccc;
+}
+.logor li:nth-child(2) .bg-line{
+    width:140px;
+    z-index: -1;
+}
+.logor li:nth-child(3) .bg-line{
+    left:0px;
+}
+.logor .num{
+    display: inline-block;
+    width:20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    color:#fff;
+    background: #ccc;
+}
+.logor .cur .bg-line{
+    background: #3393f2;
+}
+.logor .cur .num{
+    background: #3393f2;
+}
+.logor .text{
+    padding-top:12px;
+}
+/* 支付方式 */
+/* order */
+.order_detail{
+    border:1px solid #eaeaea;
+    height: 100px;
+    margin-top:20px;
+    padding-left: 70px;
+    padding-bottom: 10px;
+}
+.order_detail i{
+    font-style: normal;
+}
+.order_detail .pay_title{
+    font-size: 16px;
+    color:#4394d7;
+    line-height: 60px;
+}
+.order_detail .pay_money{
+    float: right;
+    line-height: 70px;
+    font-size: 16px;
+    color:#555;
+    margin-right: 50px;
+
+}
+.order_detail .pay_money span{
+    color:#f23939;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.order_detail  .order_number{
+    line-height: 30px;
+    color:#a9a9a8;
+}
+.order_detail  .order_number span:first-child{
+    border-right: 1px solid #a9a9a8;
+    padding-right: 20px;
+    margin-right: 40px;
+}
+/* 支付选择 */
+.pay_tab{
+    margin-top:10px;
+    border:1px solid #eaeaea;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+.pay_tab ul{
+    background: #f9f9f9;
+    color: #9d9d9d;
+    border-bottom: 1px solid #eaeaea;
+    height: 46px;
+}
+.pay_tab ul li{
+    padding:0 22px;
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #eaeaea;
+    border-top: none;
+    border-bottom: none;
+}
+.pay_tab ul li:first-child{
+    border-left: none;
+    border-right: none;
+}
+.pay_tab ul .click_on{
+    border-top: 4px solid #3e93e1;
+    color: #3e93e1;
+    height: 43px;
+    line-height: 38px;
+    background: #fff;
+}
+.pay_tab .pay_code{
+    margin: 20px auto;
+    width: 200px;
+    text-align: center;
+    color: #a9a9a8;
+}
+.pay_code .alipay_wx p{
+    background: url(../img/wechat.png) no-repeat ;
+    padding-top: 22px;
+    padding-left: 18px;
+    margin-left: 20px;
+}
+ .pay_code .loading img{
+     width: 160px;
+ }
+ .pay_code .alipay_zfb p{
+    background: url(../img/alipay.png) no-repeat ;
+    padding-top: 26px;
+    padding-left: 30px;
+    margin-left: 10px;
+ }

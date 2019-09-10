@@ -1,0 +1,173 @@
+body{
+   cursor:hand;
+}
+.list{
+   background:white;
+}
+.topList{
+   line-height:44px;
+}
+.topList li{
+   font-size:12px;
+   margin-right:5px;
+   cursor: pointer;
+}
+.topList a{
+   font-size:12px;  
+   cursor: pointer; 
+}
+.conList ul{
+   padding-left:10px;
+   border-top:1px solid #ccc;
+   border-bottom:1px solid #ccc;
+}
+.conList li{
+   line-height:40px;
+   margin-right:20px;
+}
+.conList li a{
+   font-size:12px; 
+   cursor: pointer;
+}
+.unList ul{
+   float:left;
+   margin-right:600px;
+}
+.unList ul li{
+   font-size:12px !important;
+   line-height:50px;
+   color:#969696;
+   margin-right:30px;
+   cursor: pointer;
+}
+.unList ul li span{
+   margin-left:30px;
+   color:#969696;
+}
+.unList p{
+   line-height:50px;
+   float:left;
+   font-size:12px;
+}
+.unList p i{
+   font-style:normal;
+   color:red;
+   margin-left:10px;
+}
+.unList span{
+   line-height:50px;
+   float:right;
+}
+.unList span a{
+   font-size:18px;
+   margin-right:20px;
+   cursor: pointer;
+}
+.unList .sort{
+   color:#d80c18;
+}
+.content{
+   padding-top:20px;
+   padding-bottom:80px;
+}
+.content .gbox{
+   height:824px;
+   overflow:hidden;
+}
+.content .gbox ul{
+   position:relative;
+}
+.content .gbox li{
+   padding-top:36px;
+   width:228px;
+   height:370px;
+   background:white;
+   margin:0 4px 10px;
+   border:1px solid #fff;
+   position:relative;
+}
+.content .gbox li .getId{
+   display:none;
+}
+.content .gbox li img{
+   width:180px;
+   height:180px;
+   margin-left:24px;
+}
+.content h5{
+   font-weight:normal;
+   margin:40px 0 20px 20px;
+}
+.content .gbox ul p{
+   color:#c80000;
+   padding-left:20px;
+   font-size:14px;
+   margin-top:18px;
+  
+}
+.content .gbox li span{
+   float:right;
+   color:black;
+   padding-right:10px;
+   font-size:12px;
+}
+.content .gbox ul li p .iconfont{
+   font-style:normal !important;
+   color:#d4d4d4;
+    font-size:12px;
+}
+.content .gbox ul li .iconfont .color{
+   color:#ffc600;
+}
+.content .buy{
+    margin:31px 0 0 0;
+    padding-left:0 !important;
+    line-height:39px;
+    border-top:1px solid #ccc;
+    text-align:center;
+}
+.content .gbox .collect{
+   position:absolute;
+   top:10px;
+   right:20px;
+   cursor: pointer;
+   color:#d4d4d4;
+
+}
+.content .gbox ul li:hover{
+    border:1px solid #c80000;
+}
+.content .gbox ul li:hover .buy{
+    background:#c80000;
+    color:white;
+}
+.content .gbox .collect{
+   position:absolute;
+   font-size:22px !important;
+   display:none;
+}
+.content .next{
+   margin-top:20px;
+   float:right;
+}
+.content .next span{
+   float:left;
+   margin-right:30px;
+   cursor: pointer;
+}
+.content .next ul{
+   float:left;
+}
+.content .next ul li{
+   width:30px;
+   height:30px;
+   text-align:center;
+   color:gray;
+   margin-right:20px;
+   background:#f2f2f2;
+}
+.content .next .on{
+   color:#d80c18;
+}
+
+
