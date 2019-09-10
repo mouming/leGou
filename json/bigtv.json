@@ -1,0 +1,44 @@
+[
+    {
+        "src":"img/v1.jpg",
+        "type": "Y32",
+        "info": "1GB+8GB大存储|全网海量资源|真人工智能系统",
+        "discount": "￥799",
+        "price": "￥999"
+    },
+    {
+        "src":"img/v2.jpg",
+        "type": "X40L",
+        "info": "SDR转HDR | Mstar四核处理器",
+        "discount": "￥1599",
+        "price": "￥1899"
+    },
+    {
+        "src":"img/v3.jpg",
+        "type": "Y55C漫威版",
+        "info": "1.5GB+16GB大存储|支持SDR转HDR|真人工智能系统",
+        "discount": "￥2229",
+        "price": "￥2599"
+    },
+    {
+        "src":"img/v4.jpg",
+        "type": "Y50",
+        "info": "4K超高清屏|AI语音遥控|1.5GB+16GB大存储",
+        "discount": "￥1699",
+        "price": "￥1999"
+    },
+    {
+        "src":"img/v5.jpg",
+        "type": "X50 Pro",
+        "info": "Mstar 4核处理器 | 16GB闪存",
+        "discount": "￥2199",
+        "price": "￥2500"
+    },
+    {
+        "src":"img/v6.jpg",
+        "type": "Zero65漫威版",
+        "info": "专属定制漫威元素|3GB+16GB大存储",
+        "discount": "￥7599",
+        "price": "￥7999"
+    }
+]

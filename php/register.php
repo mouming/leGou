@@ -7,7 +7,7 @@ header("Content-Type:text/html;charset=utf-8");
 	$db = mysqli_connect("localhost","root","","shopping");
 	mysqli_select_db($db,"shopping");
 	mysqli_query($db,"set names utf8");
-	$sql = "insert into user (uname,upwd) values ('$uname','$pwd')";
+	$sql = "insert into user (uname,upwd,token,address) values ('$uname','$pwd','','')";
 	$row = mysqli_query($db,$sql);
 
 	if($row){//说明是注册成功
