@@ -391,6 +391,7 @@
             if(strm){
                 $("#login").html("Hi, "+strm);
                 $("#register").html("[退出]");
+                $(".header .list2 a").eq(0).attr("href","html/myCenter.html?uname="+strm);
                 $("#gcart").attr("href","html/cart.html?uname="+strm);
                 $(".fire>a").attr("href","html/productdetails.html?uid=001&uname="+strm);
                 $(".fire li a").attr("href","html/productdetails.html?uid=002&uname="+strm);
