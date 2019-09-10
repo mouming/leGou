@@ -71,6 +71,7 @@
             </div>  
         </div>
     </div>
+    <div id="side"></div>
     <div id="foot"></div>
 </body>
     <script src="../js/public.js"></script>
@@ -80,9 +81,30 @@
         $("#head").load("header.html"); 
         $("#mainhead").load("mainhead.html");     
         $("#foot").load("footer.html");  
-        //页面加载时从后台获取所有商品数据；
-        //将数据填充在页面中；
-  
+        $("#head").load("header.html",function (){
+            if(newGoods.name){
+                $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
+                $(".header .list1").eq(0).remove();
+                $(".header .list1 li").eq(0).remove();
+                $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+newGoods.name+"'>"+newGoods.name+"</a>");
+                $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+                //设置个人中心超链接
+                $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+newGoods.name);
+            }
+        })
+        $("#foot").load("footer.html",function (){
+        })
+        $("#side").load("sidebar.html",function (){
+            if(newGoods.name){
+                $(".side-cart").attr("href","cart.html?uname="+newGoods.name);
+                $(".side-collect").attr("href","collect.html?uname="+newGoods.name);
+            }
+            $(".sidebar").find("a").mouseover(function(){
+                $(this).next().css("display","block");
+            }).mouseout(function(){
+                $(this).next().css("display","none");
+            })
+        })
         function GoodsInit(){
             this.goodsEle=$("#goods");
             this.goods=[];
@@ -289,6 +311,7 @@
         
         var newGoods=new GoodsInit();
         newGoods.init();
+
         $("#goods").on("click",(".collect"),function(e){//点击收藏
             e.stopPropagation();
                 //首先判断是否登录;
@@ -319,12 +342,12 @@
                                 uid:uid
                             }
                             cGoods.push(obj);
-                            setCookie(uname+"collect",JSON.stringify(cGoods),date);  
+                            setCookie(uname+"collect",JSON.stringify(cGoods),date,"/");  
                         }else{//没有收藏cookie信息
                             var arr=[
                                 { uid:uid}//创建一个数组，存放第一条cookie信息(商品编号)；     
                             ]
-                            setCookie(uname+"collect",JSON.stringify(arr),date);
+                            setCookie(uname+"collect",JSON.stringify(arr),date,"/");
                         }
                    $(this).css("color","rgb(255, 198, 0)"); //已收藏；
                 }else{//已收藏
@@ -337,7 +360,7 @@
                         }
                     }
                     // console.log(cGoods);
-                    setCookie(uname+"collect",JSON.stringify(cGoods),date);
+                    setCookie(uname+"collect",JSON.stringify(cGoods),date,"/");
                 } 
             }        
         }); 
