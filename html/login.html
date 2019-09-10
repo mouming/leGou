@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页</title>
+	<link rel="stylesheet" type="text/css" href="../css/line.css"/>
+		<style type="text/css">
+			.header{width:;}
+			.logo{margin-left:30px;}
+			.Background{
+				background-image: url(../img/operatbg.jpg);
+			    height:483px ;
+				width: 100%;
+				border-top: solid whitesmoke 1px;
+				position: absolute;
+			} 
+			.login_box{
+				margin-top:12px;
+				width:430px ;
+				min-height:460px ;
+				background: white;
+				position: relative;
+				margin-right: 10px;
+				float:right ;
+				}
+			.login_box_form .login_headline{
+					font-size: 18px;
+					margin-top:11px ;
+					padding-top:8px ;
+					padding-bottom:8px ;
+					}
+			.login_box_form a{
+					float:right ;
+					color: #529bef;
+					font-size: 14px;
+					}
+			#hint
+			   {
+				width:363px;
+				height:16px;
+				padding-bottom:7px ;
+				padding-left:17px ;
+				font-size: 10px;
+				color:red;
+				}
+	     ul li
+			{
+				width:378px;
+				height:40px;
+				margin-bottom:15px;
+				border: 1px solid #ccc;	
+			}	
+		 ul li input
+			  {
+				float: left;
+				width:205px;
+				height:23px;
+				margin-top: 9px;
+				margin-bottom:10px;
+				border: none;	
+				}
+				input::-webkit-input-placeholder {
+                color: #ccc; 
+                }
+                
+		</style>
+	</head>
+	<body>
+		<div class="header" >
+		<!--首页地址-->
+		<a href=""><img class="logo"  src="../img/logo.png"/></a>
+		<div class="Background">
+			
+			<div class="login_box">
+			<div class="login_box_form">
+			<p class="login_headline">登录<span><a href="register.html">立即注册</a></span></p>
+			
+				<form id="form" action="../php/login.php" method="post" onsubmit='return checkForm()'>
+				  <div id="hint"> </div>
+					<ul>
+						<li>
+							<i></i>
+							<input id="txtname" class="Form_login_text"style="outline:none" name="uname"  type="text" placeholder="请输入用户名"/>
+						  
+						</li>
+						<li>
+							<i></i>
+							<input id="password" class="Form_login_password" style="outline:none" name="pwd" type="password" placeholder="请输入密码"/>
+						</li>
+						<li>  
+							  <!--验证码 -->   
+							<i></i>
+							<input type="text"id="code_input" style="outline:none" value="" placeholder="请输入验证码,点击更换图片"/>
+						    <div id="v_container" style="width: 120px;height: 40px;float: right;background: white;"></div>
+						</li>
+					</ul>
+					<p class="formInput"><input id="autoLogin" type="checkbox" name="check" />下次自动登录</p>	
+				  <input class="Form_login_submit" id="login"  type="submit" value="登录"/>
+				</form>
+			</div>
+			</div>
+		</div>
+		</div>
+	</body>
+	    <script src="../js/cookie.js"></script>
+		<script src="../js/jquery.js"></script>
+	    <script src="../js/gVerify.js"></script>
+	<script type="text/javascript">
+   var  loginBoxForm=document.getElementsByClassName("login_box_form")[0];	
+   var  FormloginText=document.getElementsByClassName("Form_login_text")[0];
+   var  FormloginPassword=document.getElementsByClassName("Form_login_password")[0];
+   var  FormloginSubmit=document.getElementsByClassName("Form_login_submit")[0];
+   var  Verify=document.getElementsByClassName("Verify")[0];
+   var verifyCode = new GVerify("v_container");
+   var codeInput=document.getElementById("code_input");
+   var login = document.getElementById("login");
+   var autoLogin = document.getElementById("autoLogin");
+ 
+   codeInputFlag=false;
+
+  //input父集根据焦点改变边框颜色
+ FormloginText.onfocus=function(){
+    this.parentElement.style.border="1px solid #61b1ef";    
+   }	
+ FormloginText.onblur=function(){
+    this.parentElement.style.border="1px solid #ccc";
+   }
+ 
+ 
+ FormloginPassword.onfocus=function(){
+    this.parentElement.style.border="1px solid #61b1ef";    
+   }	
+ FormloginPassword.onblur=function(){
+    this.parentElement.style.border="1px solid #ccc";
+   }
+   //验证码获取焦点
+  codeInput.onfocus=function(){
+    this.parentElement.style.border="1px solid #61b1ef";
+     
+   } 
+   //验证码失去焦点
+   	codeInput.onblur=function(){
+  	//根据验证码是否正确改变边框颜色
+   if (code_input()){
+   	this.parentElement.style.border="1px solid #ccc";
+   	  hint.innerHTML = "";
+   	  codeInputFlag=true;
+   }
+   //判断表单是否为空
+   else if(this.value==""){
+   	this.parentElement.style.border="1px solid #ccc";
+   	hint.innerHTML = "";
+   	codeInputFlag=false;
+ }else{
+  	this.parentElement.style.border="1px solid red";
+  	codeInputFlag=false;
+ } 
+console.log(codeInputFlag);
+   }
+ //if(Input.innerHTML=""){
+  
+   //css样式
+	loginBoxForm.style.cssText="width:380px;height:368px;margin-left:25px;margin-right:25px; ;";	
+	FormloginSubmit.style.cssText="width:382px;height:42px;background: #61b1ef;font-size:18px;color:white;border: solid #009de6 2px;letter-spacing:20px";     
+   //正则验证  
+
+      //验证码验证
+   function code_input(){
+            var res = verifyCode.validate(document.getElementById("code_input").value);
+            if(!res){    
+            	hint.innerHTML = "验证码错误!"; 
+     	        return false;
+            }else{
+            	hint.innerHTML = "验证码正确!"; 
+               return true;
+            }
+        }
+
+	 function checkForm(){
+		
+		if( codeInputFlag){
+			return true;
+		}else{
+			return false;
+		}
+	  }
+	
+                   //     自动登录
+			login.onclick = function(){
+				//判断是否选中了自动登录
+				if(autoLogin.checked){
+					console.log(1);
+					var date = new Date();
+					date.setDate(date.getDate()+10);
+					//如果选中了，需要记录当前的登录状态
+					//在cookie中保存登录状态
+					//状态为一个身份令牌
+					setCookie("token",new Date().getTime(),date,"/");
+				}
+			}
+
+	</script>
+</html> 
