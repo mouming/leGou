@@ -53,7 +53,7 @@
             $(".header .list1").eq(0).remove();
             $(".header .list1 li").eq(0).remove();
             $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+showCollect.name+"'>"+showCollect.name+"</a>");
-            $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+            $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
             //设置个人中心超链接
             $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+showCollect.name);
         });

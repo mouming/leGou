@@ -17,7 +17,7 @@
         <div class="container clearfix">
             <div class="topList clearfix">
                <ul class="clearfix">
-                   <li><a href="index.html" style="color:black">首页</a></li>
+                   <li><a href="../index.html?a" style="color:black">首页</a></li>
                    <li>></li>
                    <li>搜索全部结果</li>
                </ul>
@@ -78,16 +78,16 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/cookie.js"></script>
     <script>
-        $("#head").load("header.html"); 
-        $("#mainhead").load("mainhead.html");     
-        $("#foot").load("footer.html");  
+        $("#mainhead").load("mainhead.html",function(){
+            
+        });     
         $("#head").load("header.html",function (){
             if(newGoods.name){
-                $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
-                $(".header .list1").eq(0).remove();
+                // $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
+                // $(".header .list1").eq(0).remove();
                 $(".header .list1 li").eq(0).remove();
                 $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+newGoods.name+"'>"+newGoods.name+"</a>");
-                $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+                $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
                 //设置个人中心超链接
                 $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+newGoods.name);
             }
@@ -196,7 +196,11 @@
                     </li> 
                 `;   
                 this.goodsEle.append(str1);   
-             }  
+             } 
+             //给首页添加链接
+            if(this.name) {
+                $(".topList a").attr("href","../index?uname="+this.name);
+            }
         } 
    
         GoodsInit.prototype.changePage=function(){//点击换页

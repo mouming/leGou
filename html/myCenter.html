@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <script src="../js/public.js"></script>
     <script src="../js/jquery.js"></script>
+    <script src="../js/cookie.js"></script>
 </head>
 <body>
     <!-- 顶部导航条 -->
@@ -22,7 +23,7 @@
     <div class="form_menu">
         <div class="container">
             <div class="map">
-                <a href="index.html">首页</a><i>&nbsp;&gt;</i>
+                <a href="../index.html?a">首页</a><i>&nbsp;&gt;</i>
                 <span id="map_title">我的订单</span>
             </div>
         </div>
@@ -454,7 +455,7 @@
                 // $(".header .list1").eq(0).remove();
                 $(".header .list1 li").eq(0).remove();
                 $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+nameCenter+"'>"+nameCenter+"</a>");
-                $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+                $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
                 //设置个人中心超链接
                 $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+nameCenter);
             }
@@ -473,6 +474,9 @@
             })
         })
 var nameCenter=hasLocationName("uname");
+if(nameCenter){
+    $(".form_menu a").attr("href","../index.html?uname="+nameCenter);
+}
         $(function(){
             $(".left_myOrder").click(function(){
                 $("#map_title").html($(this).find("a").html());

@@ -19,7 +19,7 @@
     <div class="main_details containert clearfix">
         <div class="bread_nav">
             <!-- -----------------------------首页路径暂时留白------------------------------>
-            <a href="">首页</a>
+            <a href="../index.html?a">首页</a>
             <!-- <span class="iconfont">&#xe621;</span> -->
             <span>&gt;</span>
             超5 X55漫威版
@@ -112,10 +112,8 @@
 </div>
     <div id="foot"></div>
     <!-- 右下角固定 -->
-    <div class="fixed_info">
-        <div class="fixed_info_one" id="fixed_info_one"><img src="../img/kf1.png" id="imgone"/></div>
-        <div class="fixed_info_two" id="fixed_info_two"><img src="../img/kf2.png" id="imgtwo"/></div>
-        <div class="fixed_info_thr" id="fixed_info_thr"><img src="../img/kf3.png" id="imgthr"/></div>
+    <div class="sidebar">
+
     </div>
     <div class="tilt">
         <div class="tc_info containert fixedk">
@@ -140,9 +138,30 @@
     </div>
 </body>
 <script>
-$("#head").load("header.html");
-$("#main").load("mainhead.html");
-$("#foot").load("footer.html");
+    $("#head").load("header.html",function(){
+        if(showDetail.name){
+            // $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
+            // $(".header .list1").eq(0).remove();
+            $(".header .list1 li").eq(0).remove();
+            $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+showDetail.name+"'>"+showDetail.name+"</a>");
+            $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
+            //设置个人中心超链接
+            $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+showDetail.name);
+        }
+    });
+    $("#main").load("mainhead.html");
+    $("#foot").load("footer.html");
+    $(".sidebar").load("sidebar.html",function(){
+        if(showDetail.name){
+                $(".side-cart").attr("href","cart.html?uname="+showDetail.name);
+                $(".side-collect").attr("href","collect.html?uname="+showDetail.name);
+            }
+            $(".sidebar").find("a").mouseover(function(){
+                $(this).next().css("display","block");
+            }).mouseout(function(){
+                $(this).next().css("display","none");
+            })
+    })
 </script>
 </html>
 <script>
@@ -152,6 +171,7 @@ document.onscroll = function(){
     var stop =  document.documentElement.scrollTop|| document.body.scrollTop;
     if(stop > 728) {
         card_info.style.position = "fixed";
+        card_info.style.zIndex="10";
         card_info.style.top = 0;
         hide_info.style = "display:block";
     }else{

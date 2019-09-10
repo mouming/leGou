@@ -186,7 +186,7 @@
                 // $(".header .list1").eq(0).remove();
                 $(".header .list1 li").eq(0).remove();
                 $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+showaccount.name+"'>"+showaccount.name+"</a>");
-                $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+                $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
                 //设置个人中心超链接
                 $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+showaccount.name);
             }
@@ -499,6 +499,7 @@
                             item.default="set_defaulted";
                         }
                     }.bind(this));
+                    _this.showPage();
                     $.post("../php/user.php",{uname:_this.name,address:JSON.stringify(_this.userMessage)},function(res){
                     });
                 }
@@ -522,12 +523,13 @@
         //提交订单事件
         showAccount.prototype.submitAccount=function (money){
             if($(".to_addr").children().length){
+                $(".submit_btn").find("a").off("click");
                 $(".submit_btn").find("a").attr("href","pay.html?uname="+this.name+"&money="+money+"&orderKey="+this.getOrder);    
             }else{
-                $(".submit_btn").find("a").one("click",function(){
+                $(".submit_btn").find("a").on("click",function(){
                     alert("收货地址不能为空");
                 });
-                $(".submit_btn").find("a").attr("href","#");    
+                $(".submit_btn").find("a").attr("href","");    
             }
         }
         // 生成订单号

@@ -12,8 +12,8 @@
     <body>
         <div class="gu">
             <a href=""  class="iconfont" title="购物车">&#xe600;</a>
-            <a href=""  class="iconfont" title="个人中心">&#xe601;</a>
-            <a href="#" class="iconfont" title="回到顶部">&#xe624;</a>
+            <a href=""  class="iconfont" title="收藏">&#xe613;</a>
+            <a href="#" class="iconfont" title="回到顶部">&#xe6a9;</a>
         </div>
         <div class="header">
             <div class="container clearfix">
@@ -52,29 +52,29 @@
                     </ul>
                 </form>
                 <div class="cart">
-                    <a href="html/cart.html" id="gcart"><span class="iconfont">&#xe600;</span>购物车</a>
+                    <a href="html/cart.html" id="gcart"><span class="iconfont">&#xe600;</span>购物车(<i id="cartNum" style="font-style: normal">0</i> )</a>
                 </div>
             </div>
         </div>
         <div class="fixed container clearfix">
             <dl class="menu">
                 <dd index="0">
-                    <a href="">爆款推荐<span>></span></a>
+                    <a href="html/goods.html?class=tv">爆款推荐<span>></span></a>
                 </dd>
                 <dd index="1">
-                    <a href="">屏幕尺寸<span>></span></a>
+                    <a href="html/goods.html?class=tv">屏幕尺寸<span>></span></a>
                 </dd>
                 <dd index="2">
-                    <a href="">适用场景<span>></span></a>
+                    <a href="html/goods.html?class=tv">适用场景<span>></span></a>
                 </dd>
                 <dd index="3">
-                    <a href="">观看距离<span>></span></a>
+                    <a href="html/goods.html?class=tv">观看距离<span>></span></a>
                 </dd>
                 <dd index="4">
-                    <a href="">精选配件<span>></span></a>
+                    <a href="html/goods.html?class=part">精选配件<span>></span></a>
                 </dd>
                 <dd index="5">
-                    <a href="">生活家<span>></span></a>
+                    <a href="html/goods.html?class=part">生活家<span>></span></a>
                 </dd>
             </dl>
             <div class="banner">
@@ -180,19 +180,19 @@
                     <p>超级电视 | <span>运营家庭美好生活</span></p>
                     <ul class="clearfix">
                         <li>
-                            <a href="|">40吋</a><span>|</span>
+                            <a href="">40吋</a><span>|</span>
                         </li>
                         <li>
-                            <a href="|">50吋</a><span>|</span>
+                            <a href="">50吋</a><span>|</span>
                         </li>
                         <li>
-                            <a href="|">55吋</a><span>|</span>
+                            <a href="">55吋</a><span>|</span>
                         </li>
                         <li>
-                            <a href="|">65吋</a><span>|</span>
+                            <a href="">65吋</a><span>|</span>
                         </li>
                         <li>
-                            <a href="|">更多选择 »</a>
+                            <a href="">更多选择 »</a>
                         </li>
                     </ul>
                     <div class="tvshow">
@@ -372,41 +372,60 @@
         <script>
               var  strm=""
               var  search=decodeURIComponent(location.search).substr(1).split("&");
-              console.log(search);
               for (var i = 0; i < search.length; i++) {
                  if(search[i].split("=")[0]=="uname"){
                      strm=search[i].split("=")[1];
                  }
               }
              
-              console.log(search);
+            $(".fire>a").attr("href","html/productdetails.html?uid=001");
+            $(".fire li a").attr("href","html/productdetails.html?uid=002");
+            $(".tvshow  dt a").attr("href","html/productdetails.html?uid=002");
+            $(".xianshi>a").attr("href","html/productdetails.html?uid=003");
+            $(".lifeshow a").attr("href","html/productdetails.html?uid=004");
             if(location.search=="?a"){
                 $("#login").html("登入");
                 $("#register").html("注册");
                 $("#gcart").attr("href","html/cart.html");
-             }
-              if(strm){
-                  $("#login").html("Hi, "+strm);
-                  $("#register").html("[退出]");
-                  $("#gcart").attr("href","html/cart.html?uname="+strm);
-                  $(".fire>a").attr("href","html/productdetails.html?uid=001");
-                  $(".fire li a").attr("href","html/productdetails.html?uid=001");
-                  $(".xianshi>a").attr("href","html/productdetails.html?uid=001");
-                  $(".lifeshow a").attr("href","html/productdetails.html?uid=001");
-              }else{
-                    if(location.search=="?card=off"){
-                     $("#login").html("登入");
-                     $("#register").html("注册");
-                  }else{
+            }
+            if(strm){
+                $("#login").html("Hi, "+strm);
+                $("#register").html("[退出]");
+                $("#gcart").attr("href","html/cart.html?uname="+strm);
+                $(".fire>a").attr("href","html/productdetails.html?uid=001&uname="+strm);
+                $(".fire li a").attr("href","html/productdetails.html?uid=002&uname="+strm);
+                $(".xianshi>a").attr("href","html/productdetails.html?uid=003&uname="+strm);
+                $(".lifeshow a").attr("href","html/productdetails.html?uid=004&uname="+strm);
+                $(".menu a").each(function(){
+                    $(this).attr("href",$(this).attr("href")+"&uname="+strm);
+                });
+                $(".gu a").eq(0).attr("href","html/cart.html?uname="+strm);
+                $(".gu a").eq(1).attr("href","html/collect.html?uname="+strm);
+                // 购物车统计数量
+                var cookieData ,cartNum=0;
+                if(getCookieName(strm+"carts")){
+                    cookieData=JSON.parse(getCookieName(strm+"carts"));
+                }else{
+                    cookieData=[];
+                }
+                cookieData.forEach(function(item){
+                    cartNum+=Number(item.num);
+                })
+                $("#cartNum").html(cartNum);
+            }else{
+                if(location.search=="?card=off"){
+                    $("#login").html("登入");
+                    $("#register").html("注册");
+                }else if(location.search!="?a"){
                     location.href="php/login.php";
-                  }
+                }
               }
-              $("#register").click(function () {
-                  if($("#register").html()=="[退出]"){
-                     $("#register").attr("href","index.html?a");
-                  }
-              })
-              $.getJSON("json/search.json",function(data){
+            $("#register").click(function () {
+                if($("#register").html()=="[退出]"){
+                    $("#register").attr("href","index.html?a");
+                }
+            })
+            $.getJSON("json/search.json",function(data){
                    $("#key").focus(function () {
                         $("#key").val("");
                         $("#key").keyup(function (){
@@ -416,12 +435,17 @@
                             for (var key in data[0]) {
                                 if( $("#key").val()==key){
                                     for (var i = 0; i <data[0][key].length; i++) {
-                                        str+=`<li><a href="">${data[0][key][i]}</a></li>`
+                                        str+=`<li><a href="" class="sec">${data[0][key][i]}</a></li>`
                                     } 
                                 }
                             }
-                            $(".search-list").append(str);
+                            $(".search-list").append(str);                           
                             $(".search-list").show();
+                            if(strm){
+                                $(".sec").attr("href","html/productdetails.html?uid=005&uname="+strm);
+                            }else{
+                                $(".sec").attr("href","html/productdetails.html?uid=005");
+                            }
                         })
                    })
               })
@@ -451,12 +475,6 @@
                    $(".gu").hide()
                 }
             })
-           
-                
-           
-            
-
-
              $.getJSON("json/life.json",function (arr) { 
                 $.each($(".lifeshow li dl"),function (index,ele) {
                     ele.children[0].children[0].children[0].src=arr[index].src;
@@ -466,9 +484,7 @@
                 })
              })
              $.getJSON("json/bigtv.json",function(brr){
-                 console.log(brr);
                 $.each($(".tv-big").nextAll().children("dl"),function(index,ele){
-                    console.log(brr[index].src);
                     ele.children[1].children[0].children[0].src=brr[index].src;
                     ele.children[2].innerHTML=brr[index].type;
                     ele.children[3].innerHTML=brr[index].info;

@@ -14,13 +14,13 @@
         <div class="nav"> 
             <div class="container">
                 <div class="logo">
-                    <a href="../index.html">
+                    <a href="../index.html?a">
                         <img src="../img/logo.png" alt="">
                     </a>
                 </div>
                 <form action="" class="clearfix"><input type="text" value="Zero漫威版"><input type="submit" value="搜 索"></form>
                 <div class="cart">
-                    <a href="cart.html"><span class="iconfont">&#xe600;</span>购物车</a>
+                    <a href="cart.html"><span class="iconfont">&#xe600;</span>购物车(<i id="cartNum" style="font-style:normal">0</i>)</a>
                 </div>
             </div>
         </div>
@@ -193,6 +193,7 @@
         </div>
     </div>
     <script>
+        var userName=hasLocationName("uname");
         // 设置鼠标移入移出效果
         $(".menu_all").mouseenter(function (){
             $(".menu_show").css("display","block");
@@ -211,18 +212,56 @@
         })
         // 给具体商品列表中的每一个商品添加超链接
         $.getJSON("../json/goods.json",function (data){
-                $(".menu_context a").mouseenter(function (){
-                    var _this=this;
-                    var picArr=$(this).find("img").attr("src").split("/");
-                    var pic=picArr[picArr.length-1];
-                    $(data).each(function (index,item){
-                        if(pic===item.src){
+            $(".menu_context a").mouseenter(function (){
+                var _this=this;
+                var picArr=$(this).find("img").attr("src").split("/");
+                var pic=picArr[picArr.length-1];
+                        
+                $(data).each(function (index,item){
+                    if(pic===item.src){
+                        if(userName){
+                            $(_this).attr("href","productdetails.html?uid="+item.uid+"&uname="+userName);
+                        }else{
                             $(_this).attr("href","productdetails.html?uid="+item.uid);
-                            return false;
                         }
-                    })
+                        return false;
+                    }
                 })
             })
+        })
+        if(userName){
+            $(".menu_list a").each(function(){
+                $(this).attr("href",$(this).attr("href")+"&uname="+userName);
+            })
+            $(".logo a").attr("href","../index?uname="+userName);
+            $(".cart a").eq(0).attr("href","cart.html?uname="+userName);
+            var cookieData ,cartNum=0;
+            if(getCookieName(userName+"carts")){
+                cookieData=JSON.parse(getCookieName(userName+"carts"));
+            }else{
+                cookieData=[];
+            }
+            cookieData.forEach(function(item){
+                cartNum+=Number(item.num);
+            })
+            $("#cartNum").html(cartNum);
+        }
+        
+         //判断url中是否存在name查询串的方法封装
+         function hasLocationName(name){
+            var str=location.search.substr(1);
+            var uname="";
+            if(str){
+                var arr=str.split("&");
+                arr.forEach(function (item){
+                    if(item.split("=")[0]===name){
+                        uname= decodeURIComponent(item.split("=")[1]);
+                        return false;
+                    }
+                })
+            }
+            return uname;
+        }
     </script>
 </body>
 </html>

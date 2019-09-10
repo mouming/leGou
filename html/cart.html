@@ -134,7 +134,7 @@
                 $(".header .list1").eq(0).remove();
                 $(".header .list1 li").eq(0).remove();
                 $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+show.name+"'>"+show.name+"</a>");
-                $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+                $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
                 //设置个人中心超链接
                 $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+show.name);
             }
@@ -504,9 +504,10 @@
                     }
                 })
                 if(accountArr.length){
+                    $(".total_right").find("a").off("click");
                     $(".total_right").find("a").attr("href","account.html?uname="+this.name+"&key="+JSON.stringify(accountArr))
                 }else{
-                    $(".total_right").find("a").one("click",function(){
+                    $(".total_right").find("a").on("click", function(){
                         alert("结算商品数不能为0");
                     });
                     $(".total_right").find("a").attr("href","#");  
