@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页</title>
+	<link rel="stylesheet" type="text/css" href="../css/line.css"/>
+		<style type="text/css">
+			.header{width:;}
+			.logo{margin-left:30px;}
+			.Background{
+				background-image: url(../img/operatbg.jpg);
+			    height:483px ;
+				width: 100%;
+				border-top: solid white 1px;
+				position: absolute;
+			} 
+			.register_box{
+				margin-top:12px;
+				width:430px ;
+				min-height:460px ;
+				background: white;
+				position: relative;
+				margin-right: 10px;
+				float:right ;
+				}
+			.register_box_form .register_headline{
+					font-size: 18px;
+					margin-top:11px ;
+					padding-top:8px ;
+					padding-bottom:8px ;
+					}
+			.register_box_form a{
+					float:right ;
+					color: #529bef;
+					font-size: 14px;
+					}
+			#hint
+			   {
+				width:363px;
+				height:16px;
+				padding-bottom:7px ;
+				padding-left:17px ;
+				font-size: 10px;
+				color:red;
+				}
+			ul li
+			{
+				width:378px;
+				height:40px;
+				margin-bottom:15px;
+				border: 1px solid #ccc;	
+			}	
+			ul li input
+			  {
+				float: left;
+				width:205px;
+				height:23px;
+				margin-top: 9px;
+				margin-bottom:10px;
+				border: none;	
+				}
+				input::-webkit-input-placeholder {
+                color: #ccc; 
+                }
+                
+		</style>
+	</head>
+	<body>
+		<div class="header" >
+		<!--首页地址-->
+		<a href=""><img class="logo"  src="../img/logo.png"/></a>
+		<div class="Background">
+			
+			<div class="register_box">
+			<div class="register_box_form">
+			<p class="register_headline">注册<span><a href="login.html">立即登录</a></span></p>
+			
+				<form id="form" action="../php/register.php" method="get" onsubmit="return checkForm()">
+				  <div id="hint"></div>
+					<ul>
+						<li>
+							<i></i>
+							<input id="txtname" class="Form_register_text"style="outline:none" name="uname"  type="text" placeholder="请输入用户名"/>
+						  
+						</li>
+						<li>
+							<i></i>
+							<input id="password" class="Form_register_password" style="outline:none" name="pwd" type="password" placeholder="请输入密码"/>
+						</li>
+						<li>  
+							  <!--验证码 -->   
+							<i></i>
+							<input type="text"id="code_input" style="outline:none" value="" placeholder="请输入验证码,点击更换图片"/>
+						    <div id="v_container" style="width: 120px;height: 40px;float: right;background: white;"></div>
+						</li>
+					</ul>													                               			
+				  <input class="Form_register_submit" type="submit" value="注册"/>
+				</form>
+			</div>
+			</div>
+		</div>
+		</div>
+	</body>
+		<script src="../js/jquery.js"></script>
+	    <script src="../js/gVerify.js"></script>
+	    <script src="../js/ajax.js"></script>
+	<script type="text/javascript">
+   var  registerBoxFormt=document.getElementsByClassName("register_box_form")[0];	
+   var  FormRegisterText=document.getElementsByClassName("Form_register_text")[0];
+   var  FormRegisterPassword=document.getElementsByClassName("Form_register_password")[0];
+   var  FormRegisterSubmit=document.getElementsByClassName("Form_register_submit")[0];
+   var  Verify=document.getElementsByClassName("Verify")[0];
+   var verifyCode = new GVerify("v_container");
+   var Input=document.getElementsByTagName("input");
+   var codeInput=document.getElementById("code_input");
+   var too=document.getElementById("too"); 
+
+   userFlag=false;
+   unameFlag=false;
+   passwordFlag=false;
+   codeInputFlag=false;
+
+  //input父集根据焦点改变边框颜色
+  //用户名获取焦点
+  FormRegisterText.onfocus=function(){
+    this.parentElement.style.border="1px solid #61b1ef";    
+   }	
+   //用户名失去焦点
+   	FormRegisterText.onblur=function(){
+   	 // 初始化字体颜色
+   	  hint.style.color="red";
+   		
+   	//根据用户名是否符合正则变边框颜色
+   if (userName()){
+   	this.parentElement.style.border="1px solid #ccc";
+   	hint.innerHTML = "";
+    userFlag=true;
+      //用户名唯一验证     
+     var uVal = this.value;
+				//将用户提交到后台，到数据库查询是否有一个用户名，
+			ajax({
+				method:"post",
+				url:"../php/checkUname.php",
+		    	data:{
+					uname:uVal
+					},
+					success:function(data){
+						//console.log(data);
+					if(data === "1"){
+						
+						 unameFlag = false;
+						hint.innerHTML = "用户名已存在";						
+					}else{
+						 unameFlag =true;
+						hint.innerHTML = "用户名可用";
+						hint.style.color="green";
+					}	      
+					if(unameFlag){
+						   FormRegisterText.parentElement.style.border="1px solid #ccc";  
+					}else{
+						  FormRegisterText.parentElement.style.border="1px solid red";
+						}
+				   }
+			    });
+		
+        }
+   else if(this.value==""){
+   	this.parentElement.style.border="1px solid #ccc";
+   		hint.innerHTML = "";
+   		 userFlag=false;
+   		
+ }else{
+  	this.parentElement.style.border="1px solid red";
+  	 userFlag=false;
+  }console.log(userFlag);
+   
+			  
+   }
+   
+   
+     //密码获取焦点
+    FormRegisterPassword.onfocus=function(){ 
+    this.parentElement.style.border="1px solid #61b1ef";  
+   }
+   	//密码失去焦点
+   	 FormRegisterPassword.onblur=function(){
+   	 hint.style.color="red";	
+   	 //根据密码是否符合正则改变边框颜色
+     if ( passName()){   
+   	      this.parentElement.style.border="1px solid #ccc";
+   	      hint.innerHTML = "";
+   	      passwordFlag=true;
+        }
+     else if(this.value==""){
+        	this.parentElement.style.border="1px solid #ccc";
+   		    hint.innerHTML = "";
+   	        passwordFlag=false;
+          }else{
+  	        this.parentElement.style.border="1px solid red";
+  	        passwordFlag=false;
+  }console.log(passwordFlag);
+   }
+   
+   
+   //验证码获取焦点
+    codeInput.onfocus=function(){
+    this.parentElement.style.border="1px solid #61b1ef";
+     
+   } 
+   //验证码失去焦点
+   	codeInput.onblur=function(){
+   	 hint.style.color="red";
+  	//根据验证码是否正确改变边框颜色
+   if (code_input()){
+   	this.parentElement.style.border="1px solid #ccc";
+   	  hint.innerHTML = "";
+   	  codeInputFlag=true;
+   }
+   //判断表单是否为空
+   else if(this.value==""){
+   	this.parentElement.style.border="1px solid #ccc";
+   	hint.innerHTML = "";
+   	codeInputFlag=false;
+ }else{
+  	this.parentElement.style.border="1px solid red";
+  	codeInputFlag=false;
+ } 
+console.log(codeInputFlag);
+   }
+ //if(Input.innerHTML=""){
+  
+   //css样式
+	registerBoxFormt.style.cssText="width:380px;height:368px;margin-left:25px;margin-right:25px;";	
+	FormRegisterSubmit.style.cssText="width:382px;height:42px;background: #61b1ef;font-size:18px;color:white;border: solid #009de6 2px;letter-spacing:20px";     
+   //正则验证  
+   //用户名验证
+  function userName() {
+             //     验证姓名
+            var usname = document.getElementById("txtname").value;
+             //获取你所填写的信息
+            var unameReg =/^[a-zA-Z]{2,15}$/; 
+         // console.log(uname);
+         if (!unameReg.test(usname)){ 
+            	//判断
+           hint.innerHTML = "请输入2-15个以字母开头的用户名!"; //输入不合法，则显示提示信息
+          //   console.log("1");
+               return false;       
+            }
+            else {            
+                return true;
+            }  
+         }
+  
+  //密码验证
+  function passName() {
+             //     验证密码
+            var pname = document.getElementById("password").value; //获取你 所填写的信息
+            var pnameReg = /^(\w){6,20}$/;  //定义约束,要求输入2到6个中文
+            if (!pnameReg.test(pname)) {   //判断
+                 hint.innerHTML = "输入6-20个字母、数字、下划线"; //输入不合法，则显示提示信息
+                   return false;
+            }
+            else {
+                return true;
+            }
+           }
+      //验证码验证
+   function code_input(){
+            var res = verifyCode.validate(document.getElementById("code_input").value);
+            if(!res){    
+            	hint.innerHTML = "验证码错误!"; 
+     	        return false;
+            }else{
+            	hint.innerHTML = "验证码正确!"; 
+               return true;
+            }
+        }
+   
+       //表单验证只要有一个未通过验证，无法提交
+	 function checkForm(){
+		//if(用户名验证通过 && 密码通过 && 验证码通过){
+		if(userFlag && passwordFlag && codeInputFlag&&unameFlag){
+			return true;
+		}else{
+			return false;
+		}
+	 }
+	</script>
+</html> 
