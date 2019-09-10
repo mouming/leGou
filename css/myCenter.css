@@ -1,0 +1,495 @@
+/******个人中心******/
+
+
+/******** 导航地图 ********/
+
+.form_menu{
+    background:#fff;
+}
+.map{
+    height: 50px;
+    background:#fff;
+    line-height: 50px;
+}
+.map a{
+    font-weight: bold;
+    font-size: 14px;
+}
+.map i{
+    font-weight: bold;
+    font-style: normal;
+}
+.map span{
+    font-size: 14px;
+}
+.box{
+    position: relative;
+    padding-bottom: 30px;
+    height: 882px;
+}
+.left_menu{
+    float: left;
+    width: 180px;
+    height: 716px;
+    background:#F8F8F8;
+    padding:0 0 20px 20px;
+    position: relative;
+}
+.left_bg{
+    background: #FFFFFF;
+    border-left:2px solid #DA0C18; 
+}
+.left_menu dl dt{
+    font-size: 18px;
+    padding: 20px 0 10px 0;
+}
+.left_menu dl a{
+    font-size: 14px;
+    color: #888888;
+    padding-left: 22px;
+    width: 160px;
+    height: 42px;
+    display: block;
+    line-height: 42px;
+}
+.left_menu dl a:hover{
+    color: #D80C18;
+}
+.right_main{
+    float:left;
+    background:#fff;
+    width: 990px;
+    height: 630px;
+    /* height: auto; */
+    /* position:fixed; */
+}
+.top_title{
+    height: 40px;
+    margin-bottom: 5px;
+}
+.top_title h2{
+    font-size: 18px;
+    font-weight: normal;
+    padding-left: 20px;
+    line-height: 40px;
+    float: left;
+}
+.top_title span{
+    font-size: 12px;
+    width: 89px;
+    height: 25px;
+    border: 1px solid #D8D6D6;
+    float:right;
+    text-align: center;
+    margin-top:4px;
+    padding-top: 6px;
+}
+.top_title span:hover{
+    border-color: #D80000;
+}
+.top_title a:hover{
+    color:#D80000;
+}
+.details_main{
+    height: 29px;
+}
+.details{
+    padding-left: 20px;
+    line-height: 29px;
+    float: left;
+}
+.details .line{
+    color: #D7D7D7;
+    padding: 0 10px;
+}
+
+.details a{
+    font-size: 14px;
+    padding: 0 10px;
+    line-height: 28px;
+    display: inline-block;
+}
+.details a.on{
+    color:#D80000;
+}
+.details a:hover{
+    border-bottom: 1px solid #D80C18;
+    color: #D80000;
+}
+.select_menu{
+    float: right;
+    margin-top: 5px;
+}
+.main_border{
+    border: 1px solid #DFDFDF;
+    margin-left: 20px;
+}
+.choose{
+    font-size: 14px;
+    text-align: center;
+    padding: 30px 0;
+}
+/* .myOrder{
+    position:absolute;
+} */
+.service{
+    /* height: 40px; */
+    position:absolute;
+    left: 200px;
+}
+.service_title{
+    height: 40px;
+    width: 990px;
+}
+.service_title h2{
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 40px;
+    margin: 0 0 5px 20px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.service_card{
+    height: 55px;
+    margin-left: 20px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.service_card ul li{
+    font-size: 14px;
+    width: 145px;
+    height: 33px;
+    border:1px solid #DFDFDF;
+    line-height: 33px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    border-bottom:none; 
+}
+.service_card ul li:hover{
+    color: #2884C7;
+}
+.service_card li.br{
+    height: 35px;
+    line-height: 34px;
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: none;
+    /* border-top: 1px solid #d80c18; */
+    color: #191919;
+    /* background-color: #fff; */
+    margin-bottom: -1px;
+}
+.service_card .bt{
+    border-top: 1px solid #d80c18;
+    background-color: #fff;
+    height: 35px;
+}
+.install_card .bi{
+    border-top: 1px solid #d80c18;
+    background-color: #fff;
+    height: 35px;
+}
+.aa{
+    position: absolute;
+    width: 970px;
+}
+.dd{
+    position: absolute;
+    width: 970px;
+}
+.tab{
+    padding: 20px 0;
+    margin-left: 20px;
+}
+.tab .tbl_01  tr th{
+    background: #F8F8F8;
+    margin-left: 20px;
+}
+.tab .tbl_01 th{
+    font-size: 14px;
+    font-weight: normal;
+    padding: 12px 10px;
+}
+.tab .nullData td{
+    text-align: center;
+    padding: 15px;
+}
+/* .question{
+    margin-left: 20px;
+} */
+.question ol li p{
+    padding: 5px 0;
+}
+.question fieldset{
+    border: 1px solid #DFDFDF;
+}
+.refundList{
+    height: 40px;
+    position:absolute;
+    left: 200px;
+}
+.refund_title{
+    height: 40px;
+    width: 990px;
+}
+.refund_title h2{
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 40px;
+    margin: 0 0 5px 20px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.tab_02{
+    margin-left: 20px;
+}
+.tbl_02  tr th{
+    background: #F8F8F8;
+}
+.tbl_02 th{
+    font-size: 14px;
+    font-weight: normal;
+    padding: 12px 10px;
+}
+.tab_02 .tbl_02  tr th{
+    background: #F8F8F8;
+}
+.tab_02 .tbl_02 th{
+    font-size: 14px;
+    font-weight: normal;
+    padding: 12px 10px;
+}
+.tab_02 .nullData_02 td{
+    text-align: center;
+    padding: 15px;
+}
+.installForm{
+    height: 40px;
+    position:absolute;
+    left: 200px;
+}
+.install_title{
+    height: 40px;
+    width: 990px;
+}
+.install_title h2{
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 40px;
+    margin: 0 0 5px 20px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.install_card{
+    height: 55px;
+    margin-left: 20px;
+    border-bottom: 1px solid #DFDFDF;
+}
+.install_card ul li{
+    font-size: 14px;
+    width: 145px;
+    height: 35px;
+    border:1px solid #DFDFDF;
+    line-height: 33px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    border-bottom:none; 
+}
+.install_card .red{
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: none;
+    /* border-top: 1px solid #d80c18; */
+    color: #191919;
+    /* background-color: #fff; */
+    margin-bottom: -1px;
+}
+.install_card ul li:hover{
+    color: #2884C7;
+}
+.installQuery{
+    padding-top: 20px;
+    text-align: right;
+    width: 320px;
+    float: right;
+}
+.search_ipt{
+    width: 156px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px;
+    margin-left: 5px;
+    border: 1px solid #dfdfdf;
+    border-right: none;
+    font-size: 14px;
+    text-indent: 1em;
+}
+.search_btn{
+    width: 32px;
+    height: 32px;
+    background: url("../img/search_btn2.jpg") no-repeat center;
+    border: 1px solid #dfdfdf;   
+}
+.installList{
+    margin-top:20px;
+}
+.left{
+    float: left;
+}
+.installList dt{
+    width: 140px;
+    text-align: right;
+    line-height: 26px;
+    font-size: 14px;
+    float: left;
+}
+.installList form dd{
+    float: left;
+    /* width: 715px; */
+    line-height: 26px;
+    padding-left: 10px;
+}
+.installList .proInstall {
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 0 20px 0 5px;
+}
+.installList .icon_01{
+    width: 27px;height: 27px;
+    background: url(../img/icon.png) no-repeat 0px -176px;
+    display: block;
+    cursor: pointer;
+}
+.installList .icon_02{
+    width: 27px;height: 27px;
+    background: url(../img/icon.png) no-repeat 0px -135px;
+    display: block;
+    cursor: pointer;
+}
+.installList .proInstall_right{
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+}
+.installList dl{
+    padding: 15px 0;
+    clear: both;
+}
+#chooseTime{
+    width: 138px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #dfdfdf;
+    padding: 0 5px;
+}
+.installList .timeInfo{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #888;
+    line-height: 20px;
+}
+#productName{
+    margin-right: 5px;
+    border: 1px solid #dfdfdf;
+    height: 24px;
+    line-height: 24px;
+}
+.installList .productError{
+    padding-left: 10px;
+    color: red;
+    font-size: 14px;
+}
+.installList #buyTime{
+    width: 138px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #dfdfdf;
+    padding: 0 5px;
+}
+#purchaseChannel{
+    margin-right: 5px;
+    border: 1px solid #dfdfdf;
+    height: 24px;
+    line-height: 24px;
+}
+#macCode{
+    margin-right: 5px;
+    border: 1px solid #dfdfdf;
+    height: 24px;
+    line-height: 24px;
+}
+.installList .macInfo{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #888;
+    line-height: 20px;
+}
+.installList .tvInstall{
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 0 20px 0 5px;
+}
+.installList .tvInstall_right{
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+}
+#linkMan{
+    margin-right: 5px;
+    border: 1px solid #dfdfdf;
+    height: 24px;
+    line-height: 24px;
+}
+#phone{
+    margin-right: 5px;
+    border: 1px solid #dfdfdf;
+    height: 24px;
+    line-height: 24px;
+}
+#adress select{
+    margin-right: 5px;
+    border: 1px solid #dfdfdf;
+    height: 24px;
+    line-height: 24px;
+    width: auto;
+}
+.detailInfo{
+    padding-top: 15px;
+}
+#detailAdress{
+    width: 220px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #dfdfdf;
+    padding: 0 5px;
+}
+.tipsInfo{
+    font-size: 14px;
+    color: #888;
+    line-height: 20px;
+    margin-top: 5px;
+}
+#serviceRequire{
+    width: 300px;
+    resize: none;
+    border: 1px solid #dfdfdf;
+}
+.restrictInfo{
+    font-size: 14px;
+    color: #888;
+}
+.submitBtn{
+    padding-top: 20px;
+}
+#submitButton{
+    background: #d80c18;
+    width: 108px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    border: 1px solid #d80c18;
+    text-align: center;
+    color: #fff!important;
+    border-radius: 3px;
+    cursor: pointer;
+}
