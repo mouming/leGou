@@ -385,10 +385,11 @@
                         `;
                     }
                     $("#city").html(strCity);
-                    $("#city").click(function (){
+                    $("#city")[0].onclick=function(){
                         var cityVal=this.value;
                         var strDistrict="<option value='0'>请选择</option>";
-                        if(cityVal!=0){
+                        if(cityVal!=0){                        
+
                             _this.addressData[provinceVal][cityVal].forEach(function(item){
                                 strDistrict+= `
                                 <option value="${item}">${item}</option>
@@ -396,9 +397,10 @@
                             })
                         }
                         $("#district").html(strDistrict);
-                    })
+                    }
                 }
                 $("#city").html(strCity);
+                $("#district").html("<option value='0'>请选择</option>");
             })
             $(".pac").click(function(){
                 event.stopPropagation();

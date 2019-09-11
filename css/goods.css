@@ -97,6 +97,7 @@ body{
 .content h5{
    font-weight:normal;
    margin:40px 0 20px 20px;
+   font-size: 12px;
 }
 .content .gbox ul p{
    color:#c80000;

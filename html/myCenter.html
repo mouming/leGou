@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/myCenter.css">
     <link rel="stylesheet" href="../css/public.css">
     <link rel="stylesheet" href="../iconfont/iconfont.css">
-    <link rel="stylesheet" href="../css/mainhead.css">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <script src="../js/public.js"></script>
     <script src="../js/jquery.js"></script>
@@ -16,7 +15,7 @@
 </head>
 <body>
     <!-- 顶部导航条 -->
-    <div id="header"></div>   
+    <div id="header"></div>    
     <!-- 标题栏 -->
     <div id="mainhead"></div>
     <!-- 导航地图 -->
@@ -473,10 +472,10 @@
                 $(this).next().css("display","none");
             })
         })
-var nameCenter=hasLocationName("uname");
-if(nameCenter){
-    $(".form_menu a").attr("href","../index.html?uname="+nameCenter);
-}
+        var nameCenter=hasLocationName("uname");
+        if(nameCenter){
+            $(".form_menu a").attr("href","../index.html?uname="+nameCenter);
+        }
         $(function(){
             $(".left_myOrder").click(function(){
                 $("#map_title").html($(this).find("a").html());
