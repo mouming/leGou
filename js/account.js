@@ -93,6 +93,7 @@ showAccount.prototype.showPage=function (){
     //显示商品列表
     var str="";
     var totalPrice=0;
+    var totalNum=0;
     this.goodsData.forEach(function (item){
         _this.cookieCartsData.forEach(function (ele){
             _this.key.forEach(function(key){
@@ -108,13 +109,15 @@ showAccount.prototype.showPage=function (){
                         </ul>
                     `;
                     totalPrice+=Number(item.price*ele.num);
+                    totalNum+=Number(ele.num);
                     return false;
                 }
             })
         })
     })
     $(".good_list dd div").html(str);
-    $("#total_money").html(totalPrice);
+    $("#total_money,#add_money").html(totalPrice);
+    $("#total_num").html(totalNum);
     // 显示用户的收货地址
     var str2="";
     var str3='';
