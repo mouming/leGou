@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/productdetails.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/productdetails.js"></script>
+</head>
+<body>
+    <div id="head"></div>
+    <div id="main"></div>
+    <!-- 首页超5漫威版 -->
+    <div class="main_details containert clearfix">
+        <div class="bread_nav">
+            <!-- -----------------------------首页路径暂时留白------------------------------>
+            <a href="../index.html?a">首页</a>
+            <!-- <span class="iconfont">&#xe621;</span> -->
+            <span>&gt;</span>
+            超5 X55漫威版
+        </div>
+    </div>
+    <!-- 最大盒子 -->
+    <div class="product_info containert clearfix">
+        <!-- 大盒子下的左侧盒子 -->
+         <div class="product_info_Left clearfix">
+                <!-- 左侧大图片盒子 -->
+                <div class="big_img " id="big_img">
+                        <img src="../img/tv1.jpg"/>
+                </div>
+                <div class="mas" id="box"></div>
+        </div>
+        <!-- 大盒子下的右侧盒子 -->
+        <div class="product_info_Right clearfix" id="product_detail">
+                <!-- <div class="title">
+                        <span class="title_one"><a>乐融自营</a></span>
+                         <span class="title_two"><a>超5 X55漫威版</a></span>
+                </div>
+                    
+                <div class="price_info" id="price_info">
+                    <span style="color: #888888">价格:</span>
+                    <span class="price_danjia">￥ 3,699 起</span>
+                </div>
+                <div class="mask"><img src="../img/tv1.jpg" alt="" id="big"></div>
+                <div class="size_info" id="size_info">
+                    <span style="color: #888888">尺寸</span>
+                    <span class="size_cc">55寸</span>
+                </div>
+                <div class="price_allinfo" id="price_allinfo">
+                    <span style="color: #888888">总计：</span>
+                    <span class="price_allpr">￥ 3699.00</span>
+                    <a href="#" class="submitCart"><span class="price_addcart">加入购物车 </span></a>
+                </div> 
+                <div class="read_info">
+                    <div class="slogan"><a>全面屏 | 4K HDR高色域 | 2GB+16GB</a></div>
+                        <div class="learn_more">
+                            <a href="#"><span>超5 X55钢铁侠限量版来袭</span></a>
+                    </div>
+                </div>-->
+        </div>  
+    </div>
+    <!-- 选项卡li -->
+    <div class="card_info_all containert clearfix">
+        <div class="card_info clearfix containert " id="card_info">
+            <ul>
+                <li class="cc" index=0 ><span class="hh">商品介绍</span></li>
+                <li class="cc" index=1><span>参数规格</span></li>
+                <li class="cc" index=2><span>评价晒单</span></li>
+                <li class="cc" index=3><span>售后服务</span></li>
+            </ul>
+            <a  class="submitCart"><span class="hide_info" id="hide_info">加入购物车</span></a> 
+        </div>
+    </div>
+    <div class="xuan_content clearfix">
+        <div class="pic_content containert clearfix bb" id="jieshao" style="display: block">
+            <p>
+                <img src="../img/tv1-info1.jpg"/>
+                <img src="../img/tv1-info2.jpg"/>
+                <img src="../img/tv1-info3.jpg"/>
+                <img src="../img/tv1-info4.jpg"/>
+                <img src="../img/tv1-info5.jpg"/>
+                <img src="../img/tv1-info6.jpg"/>
+                <img src="../img/tv1-info7.jpg"/>
+                <img src="../img/tv1-info8.jpg"/>
+            </p>
+        </div>
+        <div class="card_two containert clearfix bb" style="display: none" id="card_two">
+                <img src="../img/card2.png"/>
+            </div>
+        <div class="card_thr containert clearfix bb" style="display: none" id="card_thr">
+                <img src="../img/card3.png"/>
+        </div>
+        <div class="card_four containert clearfix bb" style="display: none" id="card_four">
+                <p>1.如7天内出现质量问题，可选择退货、换货或维修；15天内出现质量问题，可选择换货或维修；整机保修一年，主要零部件保修三年。</p>
+                <p>2.支持7天无理由退货（自签收次日凌晨起7天内），需要产品包装完好、不影响二次销售，且需购买者承担往返运费。</p>       
+                <p>3.因质量问题办理退换服务，请第一时间联系商城在线客服或致电1010-9000反馈。</p>
+                <p>4.为了保障您的权益，请购买后保留包装箱至少15天。退换货时如不能提供包装箱，将收取包装箱费。</p>
+                <p>5.更多售后服务介绍http://www.lemall.com/help/help-id-168.html?alys_id=foot。</p>
+        </div>
+    </div>
+<div class="statement_info containert clearfix" id="statement_info">
+    <div class="statement_price" id="statement_price">价格说明</div>
+    <p>
+            划线价格：为商品专柜吊牌价格或正品零售指导价格或商品历史展示价格等，仅供您参考。<br>
+            未划线价格：为乐融商城商品或服务现时销售价格，该价格可能会因会员资格、积分兑换、优惠政策等情形发生变化，请您以订单结算价格为准。
+    </p>
+</div>
+    <div id="foot"></div>
+    <!-- 右下角固定 -->
+    <div class="sidebar">
+
+    </div>
+    <div class="tilt">
+        <div class="tc_info containert fixedk">
+            <div class="xx_info" id="xx_info">
+                <a id="xx_bt" class="xx_bt"><img src="../img/xx.png"/></a>
+            </div>
+            <div class="tj_info">
+                <img src="../img/tj.png"/>
+                <span>添加成功</span>
+            </div>
+            <div class="gogolong">
+                <!-- 跳转接口 -->
+                <a class="gogocart" target="_blank" href="">
+                    <span class="dark">去购物车结算</span>
+                </a>
+                <!-- 跳转接口 -->
+                <a class="gogoback" href="">
+                    <span class="dark">继续购物</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $("#head").load("header.html",function(){
+        if(showDetail.name){
+            // $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
+            // $(".header .list1").eq(0).remove();
+            $(".header .list1 li").eq(0).remove();
+            $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+showDetail.name+"'>"+showDetail.name+"</a>");
+            $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
+            //设置个人中心超链接
+            $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+showDetail.name);
+        }
+    });
+    $("#main").load("mainhead.html");
+    $("#foot").load("footer.html");
+    $(".sidebar").load("sidebar.html",function(){
+        if(showDetail.name){
+                $(".side-cart").attr("href","cart.html?uname="+showDetail.name);
+                $(".side-collect").attr("href","collect.html?uname="+showDetail.name);
+            }
+            $(".sidebar").find("a").mouseover(function(){
+                $(this).next().css("display","block");
+            }).mouseout(function(){
+                $(this).next().css("display","none");
+            })
+    })
+</script>
+</html>
+<script>
+    //吸顶
+var card_info = document.getElementById("card_info");
+document.onscroll = function(){
+    var stop =  document.documentElement.scrollTop|| document.body.scrollTop;
+    if(stop > 728) {
+        card_info.style.position = "fixed";
+        card_info.style.zIndex="10";
+        card_info.style.top = 0;
+        hide_info.style = "display:block";
+    }else{
+        card_info.style.position = "static";
+        hide_info.style = "display:none";
+    }
+}
+    //放大镜
+    $(".product_info_Left").mouseenter(function () {
+    var s=(document.documentElement.clientWidth-1196)/2
+    $(".mas").show().mousedown(function (e) {
+        var x=e.offsetX;
+        var y=e.offsetY;
+        $(".mas").mousemove(function (e) {
+            e.stopPropagation();
+            var l=e.clientX-x-s;
+            var t=e.pageY-y-238;
+            if(l<0){
+                l=0;
+            }else if(l>273){
+               l=273
+            }
+            if(t<0){
+                t=0
+            }else if(t>273){
+               t=273
+            }
+            $(".mas").css({
+                "left": l,
+                "top":t
+            })
+            // box.style.left=l+"px";
+            // box.style.top=t+"px";
+            $(".mask img").css({
+                "left": -(800*l)/448,
+                "top" : -(800*t)/448
+            })
+            // big.style.left=-(800*l)/448+"px";
+            // big.style.top=-(800*t)/448+"px";
+        })
+    }) 
+    $(".mask").show() 
+})
+$(".product_info_Left").mouseleave(function (e) {
+    e.stopPropagation( );
+    $(".product_info_Left").mousemove=null;
+    $(".mas").hide();
+    $(".mask").hide(); 
+})
+
+//选项卡
+// $(".card_info").on("click","li",function(){
+//     $(".aa").eq($(this).index()).show().sibings(".aa").hide();
+// //    console.log()
+// })
+$(".cc").click(function(){
+    $(".bb").eq($(this).attr("index")).show().siblings(".bb").hide();
+    $(this).find("span").addClass("hh").end().siblings(".cc").find("span").removeClass("hh");    
+});
+
+
+//购物车
+function ShowDetail(){
+    this.name="";
+    this.goodId="";
+    this.cartCookie=[];
+    this.jsonData=[];
+    this.goodSrc="";
+}
+ShowDetail.prototype.init=function(){
+    //获取名字
+    this.name=this.hasLocationName("uname");
+    //获取id
+    this.goodId=this.hasLocationName("uid");
+    // 获取json数据
+    this.getJsonData();
+}
+// var cartName=hasLocationName("uname");
+
+// })
+
+//判断url中是否存在name查询串的方法封装
+ShowDetail.prototype.hasLocationName=function(name){
+    var str=location.search.substr(1);
+    var uname="";
+    if(str){
+        var arr=str.split("&");
+        arr.forEach(function (item){
+            if(item.split("=")[0]===name){
+                uname= decodeURIComponent(item.split("=")[1]);
+                return false;
+            }
+        })
+    }
+    return uname;
+}
+// 获取json数据
+ShowDetail.prototype.getJsonData=function(){
+    var _this=this;
+    $.getJSON("../json/goods.json",function(res){
+        _this.jsonData=res;
+        // 对页面进行渲染
+        _this.showPage();
+        // 过去cookie信息
+        _this.getCookieCart();
+        _this.saveMessage();
+    })
+}
+// 显示页面
+ShowDetail.prototype.showPage=function(){
+    var _this=this;
+    var str1="";
+    this.jsonData.forEach(function(item){
+        if(item.uid==_this.goodId&&(_this.goodId<6)){
+            str1=`
+                <div class="title">
+                        <span class="title_one"><a>乐融自营</a></span>
+                         <span class="title_two"><a>${item.name}</a></span>
+                </div>
+                    <div class="read_info">
+                        <div class="slogan"><a>${item.discribe[0]} | ${item.discribe[1]} | ${item.discribe[2]}</a></div>
+                            <div class="learn_more">
+                                <a href="#"><span>超5 X55钢铁侠限量版来袭</span></a>
+                        </div>
+                    </div>
+                <div class="price_info" id="price_info">
+                    <span style="color: #888888">价格:</span>
+                    <span class="price_danjia">￥ ${item.price} 起</span>
+                </div>
+                <div class="mask"><img src="../img/${item.src}" alt="" id="big"></div>
+                <div class="size_info" id="size_info">
+                    <span style="color: #888888">尺寸</span>
+                    <span class="size_cc">${item.size}</span>
+                </div>
+                <div class="price_allinfo" id="price_allinfo">
+                    <span style="color: #888888">总计：</span>
+                    <span class="price_allpr">￥ ${item.price}.00</span>
+                    <a class="submitCart"><span class="price_addcart">加入购物车 </span></a>
+                </div> 
+            `;
+            _this.goodSrc=item.src;
+        }else if(item.uid==_this.goodId&&(_this.goodId>5)){
+            str1=`
+            <div class="title">
+                    <span class="title_one"><a>乐融自营</a></span>
+                        <span class="title_two"><a>${item.name}</a></span>
+            </div>
+            <div class="read_info">
+                <div class="slogan"><a>${item.fitter[0]} | ${item.fitter[1]?item.fitter[1]:"X55N"} | ${item.fitter[2]?item.fitter[2]:"X43 S"}</a></div>
+                    <div class="learn_more">
+                        <a href="#"><span>超5 X55钢铁侠限量版来袭</span></a>
+                </div>
+            </div>
+            <div class="price_info" id="price_info">
+                <span style="color: #888888">价格:</span>
+                <span class="price_danjia">￥ ${item.price} 起</span>
+            </div>
+            <div class="mask"><img src="../img/${item.src}" alt="" id="big"></div>
+            <div class="size_info" id="size_info">
+                <span style="color: #888888">颜色</span>
+                <span class="size_cc">黑色</span>
+            </div>
+            <div class="price_allinfo" id="price_allinfo">
+                <span style="color: #888888">总计：</span>
+                <span class="price_allpr">￥ ${item.price}.00</span>
+                <a class="submitCart"><span class="price_addcart">加入购物车 </span></a>
+            </div> 
+                
+            `;
+            _this.goodSrc=item.src;
+        }
+    })
+    $("#big_img  img").attr("src","../img/"+_this.goodSrc);
+    $("#product_detail").html(str1);
+    //设置返回主页链接
+    $(".bread_nav").find("a").attr("href","../index.html?uname="+_this.name);
+}
+//保存加入购物车的信息
+ShowDetail.prototype.saveMessage=function(){
+
+    var _this=this;
+    $(".submitCart").click(function(event){
+        console.log(1);
+
+        event.stopPropagation();
+        if(_this.name){
+            var flag=true;
+            _this.cartCookie.forEach(function(item){
+                if(item.uid==_this.goodId){
+                    item.num++;
+                    flag=false;
+                    return false;
+                }
+            })
+            if(flag){
+                _this.cartCookie.push({uid:_this.goodId,num:1});
+            }
+            //设置cookie
+            _this.setCookieCart();
+            //显示提示框
+            $(".tilt").css("display","block");
+            $(".gogocart").attr("href","cart.html?uname="+_this.name);
+        }else{
+            $(".gogocart").attr("href","");
+            alert("你还未登录，请登录后再添加购物车");
+        }
+    })
+    $(".gogocart,#xx_bt").click(function(){
+        $(".tilt").css("display","none");
+    })
+}
+//保存cookieCart中的数据
+ShowDetail.prototype.getCookieCart=function(){
+    if(getCookieName(this.name+"carts")){
+        this.cartCookie=JSON.parse(getCookieName(this.name+"carts"));
+    }else{
+        this.cartCookie=[];
+    }
+}
+//设置cookieCart中的数据
+ShowDetail.prototype.setCookieCart=function(){
+    var date=new Date();
+    date.setDate(date.getDate()+10);
+    setCookie(this.name+"carts",JSON.stringify(this.cartCookie),date,"/");
+}
+
+var showDetail=new ShowDetail();
+showDetail.init();
+
+</script>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../css/myCenter.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/mainhead.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <script src="../js/public.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/cookie.js"></script>
+</head>
+<body>
+    <!-- 顶部导航条 -->
+    <div id="header"></div>   
+    <!-- 标题栏 -->
+    <div id="mainhead"></div>
+    <!-- 导航地图 -->
+    <div class="form_menu">
+        <div class="container">
+            <div class="map">
+                <a href="../index.html?a">首页</a><i>&nbsp;&gt;</i>
+                <span id="map_title">我的订单</span>
+            </div>
+        </div>
+    </div>
+    <!-- 左边菜单栏 -->
+    <div class="box container clearfix">
+        <div class="left_menu ">
+            <dl>
+                <dt style="padding:10px 0;">交易管理</dt>
+                <dd class="left_myOrder left_bg" index=0 ><a href="#">我的订单</a></dd>
+            </dl>
+             <dl>
+                <dt>客户服务</dt>
+                <dd class="ser" index=1 ><a href="#">退货/换货/维修</a></dd>
+                <dd class="ser" index=2 ><a href="#">取消退款查询</a></dd>
+                <dd class="ser" index=3 ><a href="#">安装/维修</a></dd>
+            </dl>
+            <dl>
+                <dt>账户信息</dt>
+                <dd><a href="#">个人中心</a></dd>
+                <dd><a href="#">个人信息</a></dd>
+                <dd><a href="#">收货地址</a></dd>
+                <dd><a href="#">我的优惠券</a></dd>
+                <dd><a href="#">我的乐豆</a></dd>
+            </dl>
+            <dl>
+                <dt>个人应用管理</dt>
+                <dd><a href="#">商品评价/晒单</a></dd>
+                <dd><a href="#" style="font-size: 18px;padding:20px 0 10px 0;color:#333333;">分享邀请赢大奖</a></dd>
+            </dl>
+        </div>
+
+        
+        <!-- 右边内容 -->
+        <div class="right_main">x
+
+            <!------------- myorder ------------------>
+
+            <div class="myOrder bx" style="display: block;"> 
+                <div class="top_title">
+                    <h2>我的订单</h2> 
+                    <a href="#"><span class="iconfont">&#xe741;&nbsp;联系客服</span></a>
+                </div>
+    
+                <div class="details_main">
+                    <div class="details ">
+                        <a href="#" class="on">全部订单</a>
+                        <span class="line">|</span>
+                        <a href="#">待付款</a>
+                        <span class="line">|</span>
+                        <a href="#">待发货</a>
+                        <span class="line">|</span>
+                        <a href="#">已完成</a>
+                    </div>
+                    <div class="select_menu">
+                        <select name="" id="select_time">
+                            <option value="">近六个月订单</option>
+                            <option value="">今年内订单</option>
+                            <option value="">2018年订单</option>
+                            <option value="">2018年以前年订单</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="main_border">
+                    <div class="choose">
+                        您还没有订单，
+                        <a href="#" style="color: #256BBB;">立即选购</a>
+                    </div>
+                </div>
+            </div>
+            <!--------------------- service  ---------------------->
+   
+            <div class="service bx"  style="display: none;">
+               <div class="service_title">
+                    <h2>退货/换货/维修</h2> 
+               </div>
+               <div class="service_card">
+                   <ul>
+                       <li class="curr bb br bt" index=0 >退货/换货/维修申请</li>
+                       <li class="bb curr2" index=1 >退货/换货/维修查询</li>
+                   </ul>
+               </div>
+               <div class="tab aa">
+                   <table class="tbl_01 " cellpadding="0" cellspacing="1" border="0" width="100%">
+                       <tbody>
+                           <tr>
+                               <th style="width:100px;">订单编号</th>
+                               <th style="width:650px;">订单商品</th>
+                               <th style="width:100px;">操作</th>
+                               <th style="width:120px;">下单时间</th>
+                           </tr>
+                           <tr class="nullData">
+                               <td>暂无数据</td>
+                           </tr>
+                       </tbody>
+                   </table>
+                   <div class="question">
+                       <fieldset style="padding: 12px;">
+                           <legend>退换货申请常见问题</legend>
+                           <ol style="list-style: none;">
+                              <li><p>1.“申请售后”按钮若为灰色，可能是因为该商品不符合售后政策或售后申请处理中;</p></li>
+                              <li><p>2.&nbsp;单独购买的乐视会员不支持退货。会员+硬件套餐中会员暂不支持直接申请退货，如需办理，待会员套餐内其它商品退款后为您办理;</p></li>
+                              <li><p>3.&nbsp;非质量问题退货，用户需承担商品配送相关的物流费用，退款金额为扣除物流费用后的金额;
+                               </p></li>
+                              <li><p>4.&nbsp;手机售后申请成功提交后，乐视售后会在12个工作小时内回复受理结果，请您注意查收短信通知;</p></li>
+                              <li><p>5.&nbsp;<a href="#" style="color: #256bbb;">查看售后政策</a></p></li>
+                           </ol>
+                       </fieldset>
+                   </div>
+               </div>
+               <div class="tab aa" style="display: none">
+                   <table class="tbl_02 " cellpadding="0" cellspacing="1" border="0" width="100%">
+                       <tbody>
+                           <tr>
+                               <th style="width:130px;">退款单编号</th>
+                               <th style="width:130px;">订单编号</th>
+                               <th >商品名称</th>
+                               <th style="width:100px;">申请时间</th>
+                               <th style="width:100px;">服务类型</th>
+                               <th style="width:80px;">状态</th>
+                               <th style="width:100px;">操作</th>
+                           </tr>
+                           <tr class="nullData">
+                               <td>暂无数据</td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+            </div>
+            <!------------ 退款列表 --------------->
+            <div class="refundList bx" style="display: none;">
+                <div class="refund_title">
+                    <h2>取消退款查询</h2> 
+                </div>
+                <div class="tab_02 c2">
+                    <table class="tbl_02 " cellpadding="0" cellspacing="1" border="0" width="100%">
+                        <tbody>
+                            <tr>
+                                <th style="width:130px;">退款单编号</th>
+                                <th style="width:130px;">订单编号</th>
+                                <th >商品名称</th>
+                                <th style="width:100px;">申请时间</th>
+                                <th style="width:100px;">服务类型</th>
+                                <th style="width:80px;">状态</th>
+                                <th style="width:100px;">操作</th>
+                            </tr>
+                            <tr class="nullData_02">
+                                <td>暂无数据</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+    
+            <!----------- 安装维修列表 ----------->
+            <div class="installForm clearfix bx" style="display: none;">
+                <div class="install_title">
+                    <h2>安装/维修</h2> 
+               </div>
+               <div class="install_card">
+                   <ul>
+                       <li class="curr_02 red cc bi" index=1>安装/维修申请</li>
+                       <li class="cc" index=0 >安装/维修查询</li>
+                   </ul>
+                    <!------------ 维修查询 ----------->
+                    <div class="installQuery" style="display: none;">
+                        <div class="searchBox">
+                            <select name="" id="" class="search_select">
+                                <option value="">售后单号</option>
+                                <option value="">商品名称</option>
+                            </select>
+                                <input type="text" name="" id="" class="search_ipt">
+                                <input type="submit" name="" id="" value="&nbsp;" class="search_btn">
+                        </div>
+                    </div>
+               </div>
+                <div class="tab_02 dd" id="search_tab " style="padding-top: 10px; display: none" >
+                    <table class="tbl_02 " cellpadding="0" cellspacing="1" border="0" width="100%">
+                        <tbody>
+                            <tr>
+                                <th style="width:130px;">退款单编号</th>
+                                <th style="width:130px;">订单编号</th>
+                                <th >商品名称</th>
+                                <th style="width:100px;">申请时间</th>
+                                <th style="width:100px;">服务类型</th>
+                                <th style="width:80px;">状态</th>
+                                <th style="width:100px;">操作</th>
+                            </tr>
+                            <tr class="nullData_02">
+                                <td>暂无数据</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               <div class="installList dd" style="display: block;">
+                   <form action="" style="padding-left: 20px">
+                       <dl>
+                           <dt><span style="color: red">＊</span> 服务类型：</dt>
+                           <dd>
+                               <div class="proInstall left">
+                                   <span class="icon_01 left"></span>
+                                   <span class="left">产品安装</span>
+                               </div>
+                               <div class="proInstall_right left">
+                                    <span class="icon_02 left"></span>
+                                    <span class="left">产品维修</span>
+                                </div>
+                           </dd>
+                           <div class="clearfix"></div>
+                       </dl>
+                       <dl>
+                           <dt><span style="color: red">＊</span> 期望服务时间：</dt>
+                           <dd><input type="text" id="chooseTime">
+                           <span id="timeError" style="font-size:14px;color: red ;display:none">预约服务时间不能为空</span>
+                           <div class="timeInfo">预约成功后，售后网点会在您提交此申请后，24小时内与您联系预约上门时间</div>
+                           </dd>
+                       </dl>
+                       <dl>
+                           <dt><span style="color: red">＊</span> 产品名称：</dt>
+                           <dd>
+                               <select name="" id="productName" maxlength="30">
+                                    <option value="">请选择商品</option>
+                                    <option value="X55C">X55C</option>
+                                    <option value="Zero65">Zero65</option>
+                                    <option value="X40C">X40C</option>
+                                    <option value="X50 Pro">X50 Pro</option>
+                                    <option value="超4 X50Pro">超4 X50Pro</option>
+                                    <option value="超4 X43 pro">超4 X43 pro</option>
+                                    <option value="超4 X55M">超4 X55M</option>
+                                    <option value="超4 X50M">超4 X50M</option>
+                                    <option value="超4 X43M">超4 X43M</option>
+                                    <option value="超4 X40M">超4 X40M</option>
+                                    <option value="超4 X75">超4 X75</option>
+                                    <option value="超4 X70">超4 X70</option>
+                                    <option value="超4 Max70 2D">超4 Max70 2D</option>
+                                    <option value="超4 Max70 3D">超4 Max70 3D</option>
+                                    <option value="超4 Max65">超4 Max65</option>
+                                    <option value="超4 Max55">超4 Max55</option>
+                                    <option value="Unique 75S">Unique 75S</option>
+                                    <option value="X65">X65</option>
+                                    <option value="X65S">X65S</option>
+                                    <option value="X65N">X65N</option>
+                                    <option value="X55N">X55N</option>
+                                    <option value="X50N">X50N</option>
+                                    <option value="X43N">X43N</option>
+                                    <option value="X40N">X40N</option>
+                                    <option value="X65L">X65L</option>
+                                    <option value="X55L">X55L</option>
+                                    <option value="X50L">X50L</option>
+                                    <option value="X43L">X43L</option>
+                                    <option value="X40L">X40L</option>
+                                    <option value="Letv uMax85">Letv uMax85</option>
+                                    <option value="Letv Unique 65">Letv Unique 65</option>
+                                    <option value="Letv Unique 55">Letv Unique 55</option>
+                                    <option value="Letv X4-Max70 3D">Letv X4-Max70 3D</option>
+                                    <option value="Letv X4-Max70 2D">Letv X4-Max70 2D</option>
+                                    <option value="Letv X4-55">Letv X4-55</option>
+                                    <option value="Letv X4-50Pro">Letv X4-50Pro</option>
+                                    <option value="Letv X4-50M">Letv X4-50M</option>
+                                    <option value="Letv X4-50">Letv X4-50</option>
+                                    <option value="Letv X4-43M">Letv X4-43M</option>
+                                    <option value="Letv X4-43">Letv X4-43</option>
+                                    <option value="Letv X4-40M">Letv X4-40M</option>
+                                    <option value="Letv X4-40">Letv X4-40</option>
+                                    <option value="Letv X65 Curved">Letv X65 Curved</option>
+                                    <option value="Letv X55 Curved">Letv X55 Curved</option>
+                                    <option value="Letv X43S">Letv X43S</option>
+                                    <option value="Letv X40S">Letv X40S</option>
+                                    <option value="Letv X65">Letv X65</option>
+                                    <option value="Letv Max3-65">Letv Max3-65</option>
+                                    <option value="Letv X3-55 Pro">Letv X3-55 Pro</option>
+                                    <option value="Letv X3-55">Letv X3-55</option>
+                                    <option value="Letv X3-50">Letv X3-50</option>
+                                    <option value="Letv X3-43">Letv X3-43</option>
+                                    <option value="Letv X3-40">Letv X3-40</option>
+                                    <option value="Letv S40 Air L">Letv S40 Air L</option>
+                                    <option value="Letv S40 Air">Letv S40 Air</option>
+                                    <option value="Letv S40">Letv S40</option>
+                                    <option value="Letv S50 Air 2D">Letv S50 Air 2D</option>
+                                    <option value="Letv S50 Air 3D">Letv S50 Air 3D</option>
+                                    <option value="Letv S50 2D">Letv S50 2D</option>
+                                    <option value="Letv S50 3D">Letv S50 3D</option>
+                                    <option value="Letv X50 Air">Letv X50 Air</option>
+                                    <option value="Letv X60S">Letv X60S</option>
+                                    <option value="Letv X60">Letv X60</option>
+                                    <option value="Letv Max70">Letv Max70</option>
+                               </select>
+                               <span class="productError" style="font-size:14px;color: red ;display: none">必须选择一个产品</span>
+                           </dd>
+                       </dl>
+                       <dl>
+                            <dt>购买时间：</dt>
+                            <dd>
+                                <input type="text" id="buyTime">
+                            </dd>
+                       </dl>
+                       <dl>
+                            <dt>购买渠道：</dt>
+                            <dd>
+                                <select id="purchaseChannel">
+                                    <option value="">请选择渠道</option>
+                                    <option value="1001">国美</option>
+                                    <option value="1002">苏宁</option>
+                                    <option value="1003">京东</option>
+                                    <option value="1004">官网</option>
+                                    <option value="1005">易迅</option>
+                                    <option value="1006">官方天猫旗舰店</option>
+                                    <option value="1007">运营商</option>
+                                    <option value="1009">一号店</option>
+                                    <option value="1010">光大银行</option>
+                                    <option value="1011">工商银行</option>
+                                    <option value="1012">华夏银行分期商城</option>
+                                    <option value="1013">建设银行分期商城</option>
+                                    <option value="1014">农商行分期商城</option>
+                                    <option value="1015">招商银行分期商城</option>
+                                    <option value="1016">中信银行分期商城</option>
+                                    <option value="1017">平安银行分期商城</option>
+                                    <option value="1018">广发银行分期商城</option>
+                                    <option value="1019">民生银行分期商城</option>
+                                    <option value="1020">北京银行分期商城</option>
+                                    <option value="1021">浦发银行</option>
+                                    <option value="1022">交通银行</option>
+                                    <option value="1023">当当网</option>
+                                    <option value="1050">嘉士伯</option>
+                                    <option value="1051">Lepar</option>
+                                    <option value="1052">兴业银行</option>
+                                    <option value="1053">乐视体育商城</option>
+                                    <option value="1056">应用商店</option>
+                                    <option value="1057">淘宝</option>
+                                    <option value="1008">其他</option>
+                                </select>
+                            </dd>
+                       </dl>
+                       <dl>
+                            <dt><span style="color: red">＊</span> 机器MAC码：</dt>
+                            <dd>
+                                <input type="text" id="macCode">
+                                <span class="macInfo">示例：B01BD2******31</span>
+                                <span style="color: red;font-size: 14px;" title="①超级电视包装箱上的白色标签；
+    ②超级电视背部的白色标签；
+    ③超级电视系统设置中查看；">如何查看MAC码?</span>
+                            </dd>
+                       </dl>
+                       <dl>
+                           <dt><span style="color: red">＊</span> 电视安装方式：</dt>
+                           <dd>
+                               <div class="tvInstall left">
+                                   <span class="icon_01 left"></span>
+                                   <span class="left">底座安装</span>
+                               </div>
+                               <div class="tvInstall_right left">
+                                    <span class="icon_02 left"></span>
+                                    <span class="left">挂架安装</span>
+                                </div>
+                           </dd>
+                           <div class="clearfix"></div>
+                       </dl>
+                       <dl>
+                            <dt><span style="color: red">＊</span> 联系人：</dt>
+                            <dd>
+                                <input type="text" id="linkMan">
+                                <span class="linkError" style="font-size:14px;color: red ;display: none">联系人不能为空</span>
+                            </dd>
+                       </dl>
+                       <dl>
+                            <dt><span style="color: red">＊</span> 手机号码：</dt>
+                            <dd>
+                                <input type="text" id="phone">
+                                <span class="phoneError" style="font-size:14px;color: red ;display: none">手机号不能为空</span>
+                            </dd>
+                       </dl>
+                       <dl>
+                            <dt><span style="color: red">＊</span> 联系地址：</dt>
+                            <dd>
+                                <div id="adress">
+                                    <select name="" id="province" maxlength="30">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <select name="" id="cityId" maxlength="30">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <select name="" id="districtId" maxlength="30">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <select name="" id="streetId" maxlength="30">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <span class="adressError" style="font-size:14px;color: red;display:none;">请输入完整的地区信息</span>
+                                </div>
+                                <div class="detailInfo">
+                                    <input type="text" name="" id="detailAdress">
+                                </div>
+                                <div class="tipsInfo">
+                                    请详细填写您的地址（具体到门牌号），以便我们为您提供更准确迅速的服务
+                                </div>
+                            </dd>
+                       </dl>
+                       <dl>
+                        <dt><span style="color: red">＊</span> 服务要求描述：</dt>
+                        <dd>
+                            <textarea name="" id="serviceRequire" cols="30" rows="10" style="height: 90px;"></textarea>
+                             <span class="restrictInfo">还可以输入500字</span>
+                             <div class="submitBtn">
+                                 <input type="button" name="" id="submitButton" value="提交">
+                             </div>
+                        </dd>
+                   </dl>
+                   </form>
+               </div>
+            </div>
+         </div>
+
+
+    </div>
+
+
+    <!-- 底部 -->
+    <div id="footer"></div>
+    <div id="side"></div>
+    <script>
+
+        $("#mainhead").load("mainhead.html");
+         //导入头部和尾部以及右侧悬浮栏
+         $("#header").load("header.html",function (){
+            if(nameCenter){
+                // $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
+                // $(".header .list1").eq(0).remove();
+                $(".header .list1 li").eq(0).remove();
+                $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+nameCenter+"'>"+nameCenter+"</a>");
+                $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
+                //设置个人中心超链接
+                $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+nameCenter);
+            }
+        })
+        $("#footer").load("footer.html",function (){
+        })
+        $("#side").load("sidebar.html",function (){
+            if(nameCenter){
+                $(".side-cart").attr("href","cart.html?uname="+nameCenter);
+                $(".side-collect").attr("href","collect.html?uname="+nameCenter);
+            }
+            $(".sidebar").find("a").mouseover(function(){
+                $(this).next().css("display","block");
+            }).mouseout(function(){
+                $(this).next().css("display","none");
+            })
+        })
+var nameCenter=hasLocationName("uname");
+if(nameCenter){
+    $(".form_menu a").attr("href","../index.html?uname="+nameCenter);
+}
+        $(function(){
+            $(".left_myOrder").click(function(){
+                $("#map_title").html($(this).find("a").html());
+                $(".bx").hide();
+                $(".bx").eq(0).show();
+                $(this).css({
+                    background:"#fff",
+                    "border-left":"2px solid #DA0C18"
+                });
+                $(".ser").css({
+                    background:"#F8F8F8",
+                    "border-left":"none"
+                });
+            });
+        });
+        
+
+        $(function(){
+            $(".ser").click(function(){
+                $("#map_title").html($(this).find("a").html());
+                $(".bx").eq(0).hide();
+                
+                $(".bx").eq($(this).attr("index")).show().siblings(".bx").hide();
+                $(this).css({
+                    background:"#fff",
+                    "border-left":"2px solid #DA0C18"
+                }).siblings().css({
+                    background:"#F8F8F8",
+                    "border-left":"none"
+                });
+                $(".left_myOrder").css({
+                    background:"#F8F8F8",
+                    "border-left":"none"
+                });
+            });
+        });
+        
+
+            $(".bb").click(function(){
+                $(".aa").eq($(this).attr("index")).show().siblings(".aa").hide();
+                $(this).addClass("bt").siblings(".bb").removeClass("bt");
+            });
+
+            $(".cc").click(function(){
+                $(".dd").eq($(this).attr("index")).show().siblings(".dd").hide();
+                $(".installQuery").show();
+                $(this).addClass("bi").siblings(".cc").removeClass("bi");
+            });
+            $(".cc").eq(0).click(function(){
+                $(".installQuery").hide();
+            });
+
+            // $("#chooseTime").blur(function(){
+            //     if($("#chooseTime").val()){
+            //         $("#timeError").hide();
+            //     }else{
+            //         $("#timeError").show().html();
+            //     }
+            // });
+            // $("#chooseTime").keydown(function(){
+            //     $("#timeError").hide();
+            // });
+
+            function ab(a,b){
+                $(a).blur(function(){
+                if($(a).val()){
+                    $(b).hide();
+                }else{
+                    $(b).show().html();
+                }
+                $(a).keydown(function(){
+                $(b).hide();
+            });
+            });
+            }
+            ab("#chooseTime","#timeError");
+            ab("#linkMan",".linkError");
+            ab("#phone",".phoneError");
+
+//判断url中是否存在name查询串的方法封装
+function hasLocationName(name){
+    var str=location.search.substr(1);
+    var uname="";
+    if(str){
+        var arr=str.split("&");
+        arr.forEach(function (item){
+            if(item.split("=")[0]===name){
+                uname= decodeURIComponent(item.split("=")[1]);
+                return false;
+            }
+        })
+    }
+    return uname;
+}
+            
+    </script>
+</body>
+</html>

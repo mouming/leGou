@@ -126,22 +126,32 @@
     </div>
     <div class="footer"></div>
     <div class="sidebar"></div>
-    <script>
-        // 导入头部和尾部以及右侧悬浮栏
+    <script>        
+        //导入头部和尾部以及右侧悬浮栏
         $(".header").load("header.html",function (){
             if(show.name){
                 $(".header .list1").clone().insertAfter($(".header .list2")).css("float","right");
                 $(".header .list1").eq(0).remove();
                 $(".header .list1 li").eq(0).remove();
                 $(".header .list1 li").eq(0).html("Hi,<a href='myCenter.html?uname="+show.name+"'>"+show.name+"</a>");
-                $(".header .list1 li").eq(1).html("<a href='../index.html'>[退出]</a>").css("marginLeft","20px");
+                $(".header .list1 li").eq(1).html("<a href='../index.html?a'>[退出]</a>").css("marginLeft","20px");
+                //设置个人中心超链接
+                $(".header .list2").find("a").eq(0).attr("href","myCenter.html?uname="+show.name);
             }
         })
         $(".footer").load("footer.html",function (){
         })
         $(".sidebar").load("sidebar.html",function (){
+            if(show.name){
+                $(".side-cart").attr("href","cart.html?uname="+show.name);
+                $(".side-collect").attr("href","collect.html?uname="+show.name);
+            }
+            $(".sidebar").find("a").mouseover(function(){
+                $(this).next().css("display","block");
+            }).mouseout(function(){
+                $(this).next().css("display","none");
+            })
         })
-        
         // 面向对象创建显示购物车及其功能的构造函数
         function ShowCart(){
             this.name="";
@@ -401,6 +411,8 @@
             })
             $("span[name='totalSum']").html(sum);
             $("i[name=totalPrice]").html(totalPrice);
+            //统计选中商品的信息生成结算购物车的超链接
+            this.orderCart();
         }
         
         // 统计购物车商品的数量
@@ -481,6 +493,26 @@
                     })
                 })
             })
+        }
+        //结算购物车
+        ShowCart.prototype.orderCart=function (){
+            if(this.name){
+                var accountArr=[];
+                $(".detail ").each(function (index){
+                    if($(this).find(".checkbox").prop("checked")){
+                        accountArr.push($(this).find(".detail_num").attr("uid"));
+                    }
+                })
+                if(accountArr.length){
+                    $(".total_right").find("a").off("click");
+                    $(".total_right").find("a").attr("href","account.html?uname="+this.name+"&key="+JSON.stringify(accountArr))
+                }else{
+                    $(".total_right").find("a").on("click", function(){
+                        alert("结算商品数不能为0");
+                    });
+                    $(".total_right").find("a").attr("href","#");  
+                }
+            }
         }
         var show=new ShowCart();
         show.init();

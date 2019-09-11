@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <title>乐融商城-官方网站</title>
+        <link href="css/index.css" rel="stylesheet" />
+        <link rel="stylesheet" href="iconfont/iconfont.css">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/cookie.js"></script>
+    </head>
+    <body>
+        <div class="gu">
+            <a href=""  class="iconfont" title="购物车">&#xe600;</a>
+            <a href=""  class="iconfont" title="收藏">&#xe613;</a>
+            <a href="#" class="iconfont" title="回到顶部">&#xe6a9;</a>
+        </div>
+        <div class="header">
+            <div class="container clearfix">
+                <ul class="clearfix list1">
+                    <li><a href="#" class="index">商城首页</a></li>
+                    <li><a href="html/login.html" id="login">登入</a><span>|</span></li>
+                    <li><a href="html/register.html" id="register">注册</a></li>
+                </ul>
+                <ul class="clearfix list2">
+                    <li><a href="#">个人中心</a></li>
+                   <li>
+                       <a href="#" class="iconfont">合作渠道<span>&#xe602;</span></a>
+                        <a href="#">电视官网</a>
+                        <a href="#">商家入驻</a>
+                   </li>
+                   <li>
+                        <a href="#" class="iconfont">帮助中心<span>&#xe602;</span></a>
+                        <a href="#">配送安装</a>
+                        <a href="#">售后服务</a>
+                        <a href="#">运费标准</a>
+                        <a href="#">联系客服</a>
+                   </li>
+                   <li><a href="#" class="iconfont">手机版<span>&#xe602;</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="#">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </div>
+                <form action="" class="clearfix"><input type="text" value="Zero漫威版" id="key"><input type="submit" value="搜 索">
+                    <ul class="search-list">
+                    </ul>
+                </form>
+                <div class="cart">
+                    <a href="html/cart.html" id="gcart"><span class="iconfont">&#xe600;</span>购物车(<i id="cartNum" style="font-style: normal">0</i> )</a>
+                </div>
+            </div>
+        </div>
+        <div class="fixed container clearfix">
+            <dl class="menu">
+                <dd index="0">
+                    <a href="html/goods.html?class=tv">爆款推荐<span>></span></a>
+                </dd>
+                <dd index="1">
+                    <a href="html/goods.html?class=tv">屏幕尺寸<span>></span></a>
+                </dd>
+                <dd index="2">
+                    <a href="html/goods.html?class=tv">适用场景<span>></span></a>
+                </dd>
+                <dd index="3">
+                    <a href="html/goods.html?class=tv">观看距离<span>></span></a>
+                </dd>
+                <dd index="4">
+                    <a href="html/goods.html?class=part">精选配件<span>></span></a>
+                </dd>
+                <dd index="5">
+                    <a href="html/goods.html?class=part">生活家<span>></span></a>
+                </dd>
+            </dl>
+            <div class="banner">
+                <ul class="fm clearfix" id="ul">
+                    <li> <img src="img/banner1.jpg" alt=""></li>
+                    <li> <img src="img/banner2.jpg" alt=""></li>
+                    <li> <img src="img/banner3.jpg" alt=""></li>
+                    <li> <img src="img/banner4.jpg" alt=""></li>
+                    <li> <img src="img/banner5.jpg" alt=""></li>
+                    <li> <img src="img/banner1.jpg" alt=""></li>
+                 </ul>
+                 <ul class="num clearfix">
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                 </ul>
+                 <div class="toLeft"></div>
+                 <div class="toRight"></div>   
+            </div>
+            <ul class="fire">
+                <li><a href="#"><img src="img/p1.jpg" alt=""><span>X55<i>￥1999</i></span></a></li>
+                <li><a href="#"><img src="img/p2.jpg" alt=""><span>X4N<i>￥1699</i></span></a></li>
+                <li><a href="#"><img src="img/p3.jpg" alt=""><span>X55L<i>￥2899</i></span></a></li>
+                <li><a href="#"><img src="img/p4.jpg" alt=""><span>X65L<i>￥3599</i></span></a></li>
+            </ul>
+            <ul class="fire">
+                <a href=""><img src="img/q2.jpg" alt=""></a>
+            </ul>
+            <ul class="fire">
+                <a href=""><img src="img/q3.jpg" alt=""></a>
+            </ul>
+            <ul class="fire">
+                <a href=""> <img src="img/q4.jpg" alt=""></a>
+            </ul>
+            <ul class="fire">
+                <a href=""><img src="img/q5.png" alt=""></a>
+            </ul>
+            <ul class="fire">
+                <a href=""> <img src="img/q6.png" alt=""></a>
+            </ul>
+        </div>
+        <div class="container main1 clearfix">
+            <ul class="clearfix">
+                <li><a href=""><img src="img/a1.jpg" alt=""></a></li>
+                <li><a href=""><img src="img/a2.jpg" alt=""></a></li>
+                <li><a href=""><img src="img/a3.jpg" alt=""></a></li>
+                <li><a href=""><img src="img/a4.jpg" alt=""></a></li>
+                <li class="last"><a href=""><img src="img/a5.jpg" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="life">
+            <div class="container">
+                <p>生活慧<span><a href="">更多>></a></span></p>
+                <ul class="clearfix lifeshow">
+                    <li>
+                        <dl>
+                            <dt><a href=""><img src="" alt=""></a></dt>
+                            <dd class="type"></dd>
+                            <dd class="price"><strong></strong> <i></i></dd>
+                            <dd><a href="">立即购买</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt><a href=""><img src="" alt=""></a></dt>
+                            <dd class="type"></dd>
+                            <dd class="price"><strong></strong> <i></i></dd>
+                            <dd><a href="">立即购买</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt><a href=""><img src="" alt=""></a></dt>
+                            <dd class="type"></dd>
+                            <dd class="price"><strong></strong> <i></i></dd>
+                            <dd><a href="">立即购买</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt><a href=""><img src="" alt=""></a></dt>
+                            <dd class="type"></dd>
+                            <dd class="price"><strong></strong> <i></i></dd>
+                            <dd><a href="">立即购买</a></dd>
+                        </dl>
+                    </li>
+                    <li class="ls">
+                        <dl>
+                            <dt><a href=""><img src="" alt=""></a></dt>
+                            <dd class="type"></dd>
+                            <dd class="price"><strong></strong> <i></i></dd>
+                            <dd><a href="">立即购买</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tv">
+            <div class="container clearfix">
+                <div class="tv-nav">
+                    <p>超级电视 | <span>运营家庭美好生活</span></p>
+                    <ul class="clearfix">
+                        <li>
+                            <a href="">40吋</a><span>|</span>
+                        </li>
+                        <li>
+                            <a href="">50吋</a><span>|</span>
+                        </li>
+                        <li>
+                            <a href="">55吋</a><span>|</span>
+                        </li>
+                        <li>
+                            <a href="">65吋</a><span>|</span>
+                        </li>
+                        <li>
+                            <a href="">更多选择 »</a>
+                        </li>
+                    </ul>
+                    <div class="tvshow">
+                       <ul>
+                           <li class="tv-big"><a href=""><img src="img/tvshow.jpg" alt=""></a></li>
+                           <li>
+                                <dl> 
+                                    <dd class="new-product"><span>新品</span><span>热卖</span></dd>
+                                    <dt><a href=""><img src="" alt=""></a></dt>
+                                    <dd class="type"></dd>
+                                    <dd class="info"></dd>
+                                    <dd class="price"><strong></strong> <i></i></dd>
+                                    <dd class="xianshi"><a href="" class="know">了解产品</a><a href="">立即购买</a></dd>
+                                </dl>
+                           </li>
+                           <li>
+                                <dl> 
+                                    <dd class="new-product"><span>新品</span><span>热卖</span></dd>
+                                    <dt><a href=""><img src="" alt=""></a></dt>
+                                    <dd class="type"></dd>
+                                    <dd class="info"></dd>
+                                    <dd class="price"><strong></strong> <i></i></dd>
+                                    <dd class="xianshi"><a href="" class="know">了解产品</a><a href="">立即购买</a></dd>
+                                </dl>
+                           </li>
+                           <li>
+                                <dl> 
+                                    <dd class="new-product"><span>新品</span><span>热卖</span></dd>
+                                    <dt><a href=""><img src="" alt=""></a></dt>
+                                    <dd class="type"></dd>
+                                    <dd class="info"></dd>
+                                    <dd class="price"><strong></strong> <i></i></dd>
+                                    <dd class="xianshi"><a href="" class="know">了解产品</a><a href="">立即购买</a></dd>
+                                </dl>
+                           </li>
+                           <li>
+                                <dl> 
+                                    <dd class="new-product"><span>新品</span><span>热卖</span></dd>
+                                    <dt><a href=""><img src="" alt=""></a></dt>
+                                    <dd class="type"></dd>
+                                    <dd class="info"></dd>
+                                    <dd class="price"><strong></strong> <i></i></dd>
+                                    <dd class="xianshi"><a href="" class="know">了解产品</a><a href="">立即购买</a></dd>
+                                </dl>
+                           </li>
+                           <li>
+                                <dl> 
+                                    <dd class="new-product"><span>新品</span><span>热卖</span></dd>
+                                    <dt><a href=""><img src="" alt=""></a></dt>
+                                    <dd class="type"></dd>
+                                    <dd class="info"></dd>
+                                    <dd class="price"><strong></strong> <i></i></dd>
+                                    <dd class="xianshi"><a href="" class="know">了解产品</a><a href="">立即购买</a></dd>
+                                </dl>
+                           </li>
+                           <li>
+                                <dl> 
+                                    <dd class="new-product"><span>新品</span><span>热卖</span></dd>
+                                    <dt><a href=""><img src="" alt=""></a></dt>
+                                    <dd class="type"></dd>
+                                    <dd class="info"></dd>
+                                    <dd class="price"><strong></strong> <i></i></dd>
+                                    <dd class="xianshi"><a href="" class="know">了解产品</a><a href="">立即购买</a></dd>
+                                </dl>
+                           </li>
+                       </ul>
+                    </div>
+                </div>
+                   
+            </div>
+        </div>
+        <div class="theme">
+            <div class="container">
+                <a href=""><img src="img/theme.jpg" alt="" width="1196px"></a>
+            </div>
+        </div>
+        <div class="server">
+            <div class="container clearfix">
+                <ul class="clearfix">
+                    <li>
+                        <span class="iconfont">&#xe607;</span>
+                        <a href="">正品保障</a>
+                    </li>
+                    <li>
+                       <span class="iconfont">&#xe615;</span>
+                        <a href="">7天无理由退货</a>
+                    </li>
+                    <li>
+                        <span class="iconfont">&#xe643;</span>
+                        <a href="">物流服务售后</a>
+                    </li>
+                    <li>
+                        <span class="iconfont">&#xe64c;</span>
+                        <a href="">服务网点</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container clearfix news">
+                 <div class="text clearfix">
+                     <dl>
+                        <dt>
+                            <a href="">选购及了解</a>
+                        </dt>
+                        <dd>
+                            <a href="">超级电视</a>
+                        </dd>
+                        <dd>
+                            <a href="">屏霸</a>
+                        </dd>
+                        <dd>
+                            <a href="">生活家</a>
+                        </dd>
+                     </dl>
+                     <dl>
+                        <dt>
+                            <a href="">帮助中心</a>
+                        </dt>
+                        <dd>
+                            <a href="">新手入门</a>
+                        </dd>
+                        <dd>
+                            <a href="">物流服务 </a>
+                        </dd>
+                        <dd>
+                            <a href="">售后政策</a>
+                        </dd>
+                        <dd>
+                            <a href="">安装报修</a>
+                        </dd>
+                     </dl>
+                     <dl>
+                        <dt>
+                            <a href="">服务支持</a>
+                        </dt>
+                        <dd>
+                            <a href="">自助服务</a>
+                        </dd>
+                        <dd>
+                            <a href="">乐码通道</a>
+                        </dd>
+                        <dd>
+                            <a href="">商家电话</a>
+                        </dd>
+                     </dl>
+                     <dl>
+                        <dt>
+                            <a href="">关于乐融商城</a>
+                        </dt>
+                        <dd>
+                            <a href="">公司介绍</a>
+                        </dd>
+                        <dd>
+                            <a href="">联系我们</a>
+                        </dd>
+                        <dd>
+                            <a href="">加入我们</a>
+                        </dd>
+                        <dd>
+                            <a href="">关注我们</a>
+                        </dd>
+                     </dl>
+                     <dl class="connect">
+                        <dt>1010-9000</dt>
+                        <dd><a href="">在线客服</a></dd>
+                        <dd class="time">服务时间：8:00-21:00</dd>
+                        <dd class="info">*生活家频道商品服务<br>需联系详情页商家电话</dd>
+                       
+                     </dl>
+                 </div>
+            </div>
+            <p>Copyright © 2004-2019 乐融商城 All rights reserved | 京ICP备19019019号-1 | 京公网安备：11000002000099号 | 营业执照信息</p>
+        </div>
+        <script src="js/index.js">
+        </script>
+        <script>
+              var  strm=""
+              var  search=decodeURIComponent(location.search).substr(1).split("&");
+              for (var i = 0; i < search.length; i++) {
+                 if(search[i].split("=")[0]=="uname"){
+                     strm=search[i].split("=")[1];
+                 }
+              }
+             
+            $(".fire>a").attr("href","html/productdetails.html?uid=001");
+            $(".fire li a").attr("href","html/productdetails.html?uid=002");
+            $(".tvshow  dt a").attr("href","html/productdetails.html?uid=002");
+            $(".xianshi>a").attr("href","html/productdetails.html?uid=003");
+            $(".lifeshow a").attr("href","html/productdetails.html?uid=004");
+            if(location.search=="?a"){
+                $("#login").html("登入");
+                $("#register").html("注册");
+                $("#gcart").attr("href","html/cart.html");
+            }
+            if(strm){
+                $("#login").html("Hi, "+strm);
+                $("#register").html("[退出]");
+                $(".header .list2 a").eq(0).attr("href","html/myCenter.html?uname="+strm);
+                $("#gcart").attr("href","html/cart.html?uname="+strm);
+                $(".fire>a").attr("href","html/productdetails.html?uid=001&uname="+strm);
+                $(".fire li a").attr("href","html/productdetails.html?uid=002&uname="+strm);
+                $(".xianshi>a").attr("href","html/productdetails.html?uid=003&uname="+strm);
+                $(".lifeshow a").attr("href","html/productdetails.html?uid=004&uname="+strm);
+                $(".menu a").each(function(){
+                    $(this).attr("href",$(this).attr("href")+"&uname="+strm);
+                });
+                $(".gu a").eq(0).attr("href","html/cart.html?uname="+strm);
+                $(".gu a").eq(1).attr("href","html/collect.html?uname="+strm);
+                // 购物车统计数量
+                var cookieData ,cartNum=0;
+                if(getCookieName(strm+"carts")){
+                    cookieData=JSON.parse(getCookieName(strm+"carts"));
+                }else{
+                    cookieData=[];
+                }
+                cookieData.forEach(function(item){
+                    cartNum+=Number(item.num);
+                })
+                $("#cartNum").html(cartNum);
+            }else{
+                if(location.search=="?card=off"){
+                    $("#login").html("登入");
+                    $("#register").html("注册");
+                }else if(location.search!="?a"&&location.host==="localhost"){
+                    location.href="php/login.php";
+                }
+              }
+            $("#register").click(function () {
+                if($("#register").html()=="[退出]"){
+                    $("#register").attr("href","index.html?a");
+                }
+            })
+            $.getJSON("json/search.json",function(data){
+                   $("#key").focus(function () {
+                        $("#key").val("");
+                        $("#key").keyup(function (){
+                            var str="";
+                            $("#key").css("color","#333")
+                            $(".search-list").find("li").remove();
+                            for (var key in data[0]) {
+                                if( $("#key").val()==key){
+                                    for (var i = 0; i <data[0][key].length; i++) {
+                                        str+=`<li><a href="" class="sec">${data[0][key][i]}</a></li>`
+                                    } 
+                                }
+                            }
+                            $(".search-list").append(str);                           
+                            $(".search-list").show();
+                            if(strm){
+                                $(".sec").attr("href","html/productdetails.html?uid=005&uname="+strm);
+                            }else{
+                                $(".sec").attr("href","html/productdetails.html?uid=005");
+                            }
+                        })
+                   })
+              })
+             $("form").hover(function(){
+                $(".search-list").show();
+             },function () {
+                $(".search-list").hide();
+             })
+            $(".lifeshow").find("dd>a").click(function () {
+                if(location.search=="?card=off"){
+                    alert("请先登入乐融账号");
+                    return false;
+                }
+            })
+            $(".tvshow").find("dd>a").click(function () {
+                if(location.search=="?card=off"){
+                    alert("请先登入乐融账号");
+                    return false;
+                }
+            })
+            $(window).scroll(function () {
+               var st=document.documentElement.scrollTop
+            //    console.log(st);
+                if (st>1500) {
+                   $(".gu").show()
+                }else{
+                   $(".gu").hide()
+                }
+            })
+             $.getJSON("json/life.json",function (arr) { 
+                $.each($(".lifeshow li dl"),function (index,ele) {
+                    ele.children[0].children[0].children[0].src=arr[index].src;
+                    ele.children[1].innerHTML=arr[index].title;
+                    ele.children[2].children[0].innerHTML=arr[index].discount;
+                    ele.children[2].children[1].innerHTML=arr[index].price;
+                })
+             })
+             $.getJSON("json/bigtv.json",function(brr){
+                $.each($(".tv-big").nextAll().children("dl"),function(index,ele){
+                    ele.children[1].children[0].children[0].src=brr[index].src;
+                    ele.children[2].innerHTML=brr[index].type;
+                    ele.children[3].innerHTML=brr[index].info;
+                    ele.children[4].children[0].innerHTML=brr[index].discount;
+                    ele.children[4].children[1].innerHTML=brr[index].price;
+                    
+                })
+             })
+
+             
+             $(".tv-big").nextAll().hover(function(){
+                  $(this).find(".xianshi").show();
+                  $(this).find(".xianshi").animate({top:-30},500)
+             },function(){
+                 $(this).find(".xianshi").hide();
+                 $(this).find(".xianshi").css("top",0);
+             })
+
+
+            // 选项卡切换
+             $(".menu dd").hover(function (){
+                 var index=$(this).attr("index")
+                //  console.log(index);
+                 $(".fire").eq(index).show().siblings(".fire").hide();
+                 $(".fixed").hover(null,function () {
+                    $(".fire").eq(index).hide();
+                })
+             });
+
+            //免登入
+            //  var token=getCookieByName("token")
+            //  $.ajax({
+            //      type: "post",
+            //      url: "php/login.php",
+            //      data:{
+            //          uname:search
+            //      }
+            //  })
+           
+        </script>
+    </body>
+</html>

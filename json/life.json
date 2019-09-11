@@ -1,0 +1,32 @@
+[
+    {
+        "src":"img/b1.jpg",
+        "title": "飞科（FLYCO） FS336电动剃须刀",
+        "discount": "￥189",
+        "price": "￥229"
+    },
+    {
+        "src":"img/b2.jpg",
+        "title": "山水 家用智能电热水瓶5L大容量STP-7506",
+        "discount": "￥239",
+        "price": "￥259"
+    },
+    {
+        "src":"img/b3.jpg",
+        "title": "山水智能加热破壁机SJ-5212",
+        "discount": "¥399",
+        "price": "￥499"
+    },
+    {
+        "src":"img/b4.jpg",
+        "title": "飞利浦（PHILIPS）冲牙器 电动洗牙器HX8331 洁牙器喷气式洁牙器",
+        "discount": "¥559",
+        "price": "￥599"
+    },
+    {
+        "src":"img/b5.jpg",
+        "title": "小狗 D-807干湿吹多用吸尘器",
+        "discount": "￥369",
+        "price": "￥380"
+    }
+]

@@ -4,15 +4,19 @@
 	
 	if(empty($_POST["uname"])){//返回1说明 表示用户名的请求信息没有
 		//直接从主页过来，并且是之前有过登录状态记录
-		$token = $_COOKIE["token"];//只要过来了一定会有token状态 信息
-		//根据token信息从数据库中查询该条记录，直接登录成功并跳转
-		$selectToken = "select * from user where token='$token'";
-		$result =ConnectMysql($selectToken);
-		$tokenArr = mysqli_fetch_array($result);
-	if($tokenArr){
-			echo "<script>location.href = '../html/index.html?uname=".$tokenArr["uname"]."'</script>";
+		if(!empty($_COOKIE["token"])){
+			$token = $_COOKIE["token"];//只要过来了一定会有token状态 信息
+			//根据token信息从数据库中查询该条记录，直接登录成功并跳转
+			$selectToken = "select * from user where token='$token'";
+			$result =ConnectMysql($selectToken);
+			$tokenArr = mysqli_fetch_array($result);
+			if($tokenArr){
+				echo "<script>location.href = '../index.html?uname=".$tokenArr["uname"]."'</script>";
+			}else{
+				echo "<script>location.href = '../index.html?card=off'</script>";
+			}	
 		}else{
-			echo "<script>location.href = '../html/index.html?card=off'</script>";
+			echo "<script>location.href = '../index.html?card=off'</script>";
 		}
 	}else{
 		//从登录窗口过来
@@ -32,7 +36,7 @@
 					ConnectMysql($updateToken);
 				}
 				//将登录用户名携带跳转过去
-				echo "<script>alert('登录成功！');location.href = '../html/index.html?uname=".$arr["uname"]."'</script>";
+				echo "<script>alert('登录成功！');location.href = '../index.html?uname=".$arr["uname"]."'</script>";
 				
 			}else{
 				//密码有误
