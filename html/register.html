@@ -238,11 +238,11 @@ console.log(codeInputFlag);
              //     验证姓名
             var usname = document.getElementById("txtname").value;
              //获取你所填写的信息
-            var unameReg =/^[a-zA-Z]{2,15}$/; 
+            var unameReg =/^[\w\u4e00-\u9fa5]{1,12}$/; 
          // console.log(uname);
          if (!unameReg.test(usname)){ 
             	//判断
-           hint.innerHTML = "请输入2-15个以字母开头的用户名!"; //输入不合法，则显示提示信息
+           hint.innerHTML = "请输入1-12位的英文、数字、汉字及下划线、!"; //输入不合法，则显示提示信息
           //   console.log("1");
                return false;       
             }
