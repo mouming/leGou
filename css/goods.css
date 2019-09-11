@@ -97,7 +97,11 @@ body{
 .content h5{
    font-weight:normal;
    margin:40px 0 20px 20px;
+<<<<<<< HEAD
    font-size: 12px;
+=======
+   
+>>>>>>> 82f6fcbe860bc4db65c02b92e65235718e3627da
 }
 .content .gbox ul p{
    color:#c80000;
@@ -122,10 +126,11 @@ body{
 }
 .content .buy{
     margin:31px 0 0 0;
-    padding-left:0 !important;
+    padding:0 !important;
     line-height:39px;
     border-top:1px solid #ccc;
     text-align:center;
+    cursor:pointer;
 }
 .content .gbox .collect{
    position:absolute;
@@ -166,6 +171,7 @@ body{
    color:gray;
    margin-right:20px;
    background:#f2f2f2;
+   cursor:pointer;
 }
 .content .next .on{
    color:#d80c18;
