@@ -122,6 +122,7 @@ html body{
     height: 46px;
 }
 .pay_tab ul li{
+    cursor: pointer;
     padding:0 22px;
     height: 46px;
     line-height: 46px;

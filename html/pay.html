@@ -109,6 +109,8 @@
             this.createMoney();
            //两小时倒计时
            this.countdown();
+           //切换支付页面
+           this.clickPay();
         }
         //判断url中是否存在name查询串的方法封装
         showPay.prototype.hasLocationName=function (name){
@@ -156,6 +158,13 @@
             //剩余的秒
             var s = parseInt(t - h * 3600 - m * 60) ;
             $("#time").html(h + "小时" + m + "分钟" + s + "秒") ;
+        }
+        showPay.prototype.clickPay=function(){
+            $(".pay_tab ul li").click(function(){
+               $(".pay_code .pay_content").css("display","none").eq($(this).index()).css("display","block");
+               $(".pay_tab ul li").removeClass("click_on");
+               $(this).addClass("click_on");
+            })
         }
         var showpay=new showPay();
         showpay.init();
