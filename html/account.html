@@ -67,7 +67,10 @@
                         <li class="product_number">数量</li>
                         <li class="product_cost">小计（元）</li>
                         <li class="product_exercisable">操作</li>
-                    </ul> 
+                    </ul>
+                    <div>
+
+                    </div> 
                     <!-- <ul class="detail clearfix">
                         <li class="detail_picture"><img src="../img/part4.jpg" alt=""></li>
                         <li class="detail_content">乐视运动蓝牙耳机</li>
@@ -293,7 +296,7 @@
                     })
                 })
             })
-            $(".good_list dd").append(str);
+            $(".good_list dd div").html(str);
             $("#total_money").html(totalPrice);
             // 显示用户的收货地址
             var str2="";
